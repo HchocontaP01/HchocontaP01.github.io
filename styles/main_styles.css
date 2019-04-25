@@ -1707,3 +1707,16 @@ section
 	right: 0;
 	padding: 15px;
 }
+/**
+	LOGIN MODAL
+**/
+
+#login-modal {
+	border-radius: unset !important;
+	background-color: #f4f8fb !important;
+	padding: 12px;
+}
+
+#password-reset {
+	color: #32c69a;
+}

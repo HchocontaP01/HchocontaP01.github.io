@@ -9,7 +9,7 @@
 3. Init Menu
 4. InitDeptSlider
 5. Init Accordions
-
+6. Init the Login modal
 
 ******************************/
 
@@ -28,6 +28,7 @@ $(document).ready(function()
 	var menuActive = false;
 
 	setHeader();
+	openLoginModal();
 
 	$(window).on('resize', function()
 	{
@@ -44,6 +45,7 @@ $(document).ready(function()
 		setHeader();
 	});
 
+	
 	initMenu();
 	initDeptSlider();
 	initAccordions();
@@ -225,6 +227,19 @@ $(document).ready(function()
 				});
 			});
 		}
+	}
+
+	/* 
+
+	6. Init the Login modal
+
+	*/
+
+	function openLoginModal()
+	{	
+		$("#show-login-modal").click(()=>{
+			$('#exampleModalCenter').modal('toggle');	
+		});
 	}
 
 });
