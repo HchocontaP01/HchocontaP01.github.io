@@ -5,6 +5,8 @@ CREATE TABLE tipoEntrada
 (
 	idTipoEntrada INT AUTO_INCREMENT, 
     nombreTipoEntrada VARCHAR(50) NOT NULL,
+    descripcionTipoEntrada VARCHAR(50) NOT NULL, 
+    urlImagTipoEntrada VARCHAR(50) NOT NULL, 
     PRIMARY KEY (idTipoEntrada)
 );	
 
