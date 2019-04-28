@@ -209,11 +209,15 @@ section
 {
 	height: 100%;
 }
+
 .super_container
 {
-	width: 100%;
-	overflow: hidden;
+	width: 80% !important; 
+	overflow: hidden !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
 }
+
 .prlx_parent
 {
 	overflow: hidden;
@@ -466,7 +470,7 @@ section
 }
 .header_nav_content
 {
-	height: 78px;
+	height: 55px;
 }
 .main_nav
 {
@@ -1095,6 +1099,21 @@ section
 {
 	width: 275px;
 	height: 54px;
+	background: #32c69a;
+	border: none;
+	outline: none;
+	color: #FFFFFF;
+	font-size: 11px;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	cursor: pointer;
+	margin-top: 28px;
+}
+.contact_button_list
+{
+	width: 100px;
+	height: 30px;
 	background: #32c69a;
 	border: none;
 	outline: none;

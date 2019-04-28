@@ -211,8 +211,10 @@ section
 }
 .super_container
 {
-	width: 100%;
+	width: 80% !important; 
 	overflow: hidden;
+	margin-right: auto !important;
+	margin-left: auto !important;
 }
 .prlx_parent
 {
