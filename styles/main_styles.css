@@ -212,12 +212,12 @@ section
 .super_container
 {
 	width: 80% !important; 
-	overflow: hidden;
+	overflow: hidden !important;
 	margin-right: auto !important;
 	margin-left: auto !important;
 }
 .prlx_parent
-{
+	{
 	overflow: hidden;
 }
 .prlx
@@ -1100,10 +1100,9 @@ section
 
 .departments
 {
-	width: 100%;
+	width: calc(100% + 20px);
 	background: #FFFFFF;
 	padding-top: 99px;
-	padding-bottom: 52px;
 }
 .dept_row
 {
@@ -1529,7 +1528,7 @@ section
 }
 .footer_contact_form div input
 {
-	width: calc((100% - 12px) / 2);
+	width: calc((100% - 5px) / 2);
 }
 .footer_contact_input
 {
