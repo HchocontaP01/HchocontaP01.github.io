@@ -68,12 +68,12 @@
 	        		<div class="container">
 	        			<div class="form-row">
 	        				<div class="col">
-	        					<form>
+	        					<form class="FormularioLogin" action="controlers/controladorInicioSesion.php" method="post">
 	        						<div class="form-group">
-	        							<input type="text" class="info_form_dep info_input" name="" placeholder="Usuario">
+	        							<input type="text" class="info_form_dep info_input" name="usuario" placeholder="Usuario">
 	        						</div>
 	        						<div class="form-group">
-	        							<input type="password" class="info_form_dep info_input" name="" placeholder="Contraseña">
+	        							<input type="password" class="info_form_dep info_input" name="contrasena" placeholder="Contraseña">
 	        						</div>
 	        						<div class="form-group">
 	        							<button class="info_form_button">INGRESAR</button>
@@ -100,7 +100,7 @@
 	<!-- Home -->
 
 	<div class="home">
-		<div class="background_image" style="background-image:url(images/index_hero.jpg)"></div>
+		<div class="background_image" style="background-image:url(images/entidad.jpg)"></div>
 
 		<!-- Header -->
 
@@ -117,7 +117,7 @@
 									<div class="header_top_extra d-flex flex-row align-items-center justify-content-start ml-auto">
 										<div class="header_top_nav">
 											<ul class="d-flex flex-row align-items-center justify-content-start">
-												<li><a href="#">Mesa de ayuda</a></li>
+												<li><a href="#">Correo interno</a></li>
 												<li><a href="#" id="show-login-modal">Inicio de Sesión</a></li>
 												<li><a href="#">Moodle</a></li>
 											</ul>
@@ -142,58 +142,58 @@
 					        <div class="row">
 					         <div class="col-sm-6 col-lg-3">
 					          <h5>Nosotros</h5>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Inicio</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Sedes</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Entida</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Directorio Funcionarios</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Directorio Institucional</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Procesos y Procedimientos</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="index.html">Inicio</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="sedes.html">Sedes</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="entidad.html">Entida</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="directorioFuncionarios.html">Directorio Funcionarios</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="directorioInstitucional.html">Directorio Institucional</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="proceso.html">Procesos y Procedimientos</a>
 					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Correo Interno</a>
 					         </div>
 					         <div class="col-sm-6 col-lg-3">
 					          <h5>Infórmate</h5>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Noticias</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Datos Abiertos</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Convocatorias</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Preguntas y respuestas</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Metas, Objetivos e indicadores</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Ofertas de empleo</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Control</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Información Adicional</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Población Vulnerable</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Glosario</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Contrataciones</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Ejecución de contratos</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="noticias.html">Noticias</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="datosAbiertos.html">Datos Abiertos</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="convocatorias.html">Convocatorias</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="pqr.html">Preguntas y respuestas</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="metas.html">Metas, Objetivos e indicadores</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="ofertasEmpleo.html">Ofertas de empleo</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="control.html">Control</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="informacionAdicional.html">Información Adicional</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="poblacionVulnerable.html">Población Vulnerable</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="glosario.html">Glosario</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="contrataciones.html">Contrataciones</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="ejecucionContratos.html">Ejecución de contratos</a>
 					         </div>
 							 <div class="col-sm-6 col-lg-3">
 					          <h5>Documentos</h5>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Rendición de cuentas</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Informes</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Estudios e investigaciones</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Proyectos en ejecución</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Informes de PQRS</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Normatividad</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Políticas y lineamientos</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Planes</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Programas</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Presupuesto</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="rendicionCuentas.html">Rendición de cuentas</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="informes.html">Informes</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="estudios.html">Estudios e investigaciones</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="proyectos.html">Proyectos en ejecución</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="informePqr.html">Informes de PQRS</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="normatividad.html">Normatividad</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="politicas.html">Políticas y lineamientos</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="planes.html">Planes</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="programas.html">Programas</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="presupuesto.html">Presupuesto</a>
 					         </div>
 							 <div class="col-sm-6 col-lg-3">
 					          <h5>Participa</h5>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Calendario de Actividades</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Niños, Niñas y Adolecentes</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Retos de participacón</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Encuesta</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Instancias de Participación</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="calendario.html">Calendario de Actividades</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="ninosNinasAdolecentes.html">Niños, Niñas y Adolecentes</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="retos.html">Retos de participacón</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="encuesta.html">Encuesta</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="instanciasParticipacion.html">Instancias de Participación</a>
 					         </div>
 					          <div class="col-sm-6 col-lg-3">
 					          <h5>Atención Ciudadana</h5>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Transparencia y acceso</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Tramites y servicios</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Mecanismos de control</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Transparencia</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Recepción de solicitudes</a>
-					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Política y protección de datos</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="transparenciaAcceso.html">Transparencia y acceso</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="tramites.html">Tramites y servicios</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="mecanismos.html">Mecanismos de control</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="transparencia.html">Transparencia</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="solicitudes.html">Recepción de solicitudes</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="proteccionDatos.html">Política y protección de datos</a>
 					         </div>
 					        </div>
 					       </div>
@@ -615,7 +615,7 @@
 							<div class="container">
 								<div class="row">
 									<div class="col text-center">
-										<div class="section_title">Govierno</div>
+										<div class="section_title">Gobierno</div>
 										<div class="section_subtitle">En liena</div>
 									</div>
 								</div>
@@ -629,24 +629,51 @@
 													
 													<!-- Slide -->
 													<div class="owl-item dept_item">
-														<div class="dept_image"><img src="images/dept_1.jpg" alt=""></div>
+														<div class="dept_image"><img src="images/Presidencia-logo.png" alt=""></div>
 													</div>
 
 													<!-- Slide -->
 													<div class="owl-item dept_item">
-														<div class="dept_image"><img src="images/dept_2.jpg" alt=""></div>
+														<div class="dept_image"><img src="images/logoMinTic.jpg" alt=""></div>
 													</div>
 
 													<!-- Slide -->
 													<div class="owl-item dept_item">
-														<div class="dept_image"><img src="images/dept_3.jpg" alt=""></div>
+														<div class="dept_image"><img src="images/no-mas-filas-tramites-sin-complicaciones.png" alt=""></div>
 													</div>
 
 													<!-- Slide -->
 													<div class="owl-item dept_item">
-														<div class="dept_image"><img src="images/dept_4.jpg" alt=""></div>
+														<div class="dept_image"><img src="images/LOGO-URNA-GA-01.png" alt=""></div>
 													</div>
-
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/6_sirvo-a-mi-pais_200x200.png" alt=""></div>
+													</div>
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/logoPortal.png" alt=""></div>
+													</div>
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/compraEficiente.png" alt=""></div>
+													</div>
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/logoCoColombia.png" alt=""></div>
+													</div>
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/logoMetrologia.jpg" alt=""></div>
+													</div>
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/logoCodigoPostal.png" alt=""></div>
+													</div>
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/correo.png" alt=""></div>
+													</div>
 												</div>
 												
 											</div>

@@ -10,6 +10,9 @@
 <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="styles/contact.css">
 <link rel="stylesheet" type="text/css" href="styles/contact_responsive.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
 </head>
 <body>
 
@@ -154,6 +157,7 @@
 									<option>Ejecución de Contratos</option>
 								</select>
 								<button class="contact_button" id="contact_button">Enviar Entrada</button>
+								<button class="contact_button" id="contact_button" onclick="location.href='listaEntrada.html'">Administrar Entradas</button>
 							</form>
 						</div>
 						</div>
@@ -195,8 +199,8 @@
 </div>
 	<!-- Footer -->
 
-		<footer class="footer">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/footer.jpg" data-speed="0.8"></div>
+	<footer class="footer" style="background-image: url(images/footer2.jpg");">
+		<div   ></div>
 		<div class="footer_content">
 			<div class="container">
 				<div class="row">
@@ -205,7 +209,7 @@
 					<div class="col-lg-3 footer_col">
 						<div class="footer_about">
 							<div class="logo">
-								<a href="#">health<span>+</span></a>	
+								<a href="index.html">ESE HOSPITAL SAN MARTÍN DE PORRES</a>	
 							</div>
 							<div class="footer_about_text">Lorem ipsum dolor sit amet, lorem maximus consectetur adipiscing elit. Donec malesuada lorem maximus mauris.</div>
 							<div class="footer_social">
@@ -219,7 +223,7 @@
 								</ul>
 							</div>
 							<div class="copyright">
-								Desarrollado 
+								Desarrollado por
 							</div>
 						</div>
 					</div>
@@ -227,85 +231,110 @@
 					<!-- Footer Contact -->
 					<div class="col-lg-5 footer_col">
 						<div class="footer_contact">
-							<div class="footer_contact_title">Quick Contact</div>
+							<div class="footer_contact_title">Contactanos</div>
 							<div class="footer_contact_form_container">
 								<form action="#" class="footer_contact_form" id="footer_contact_form">
 									<div class="d-flex flex-xl-row flex-column align-items-center justify-content-between">
-										<input type="text" class="footer_contact_input" placeholder="Name" required="required">
-										<input type="email" class="footer_contact_input" placeholder="E-mail" required="required">
+										<input type="text" class="footer_contact_input" placeholder="Nombre" required="required">
+										<input type="email" class="footer_contact_input" placeholder="Correo electronico" required="required">
 									</div>
-									<textarea class="footer_contact_input footer_contact_textarea" placeholder="Message" required="required"></textarea>
-									<button class="footer_contact_button">send message</button>
+									<textarea class="footer_contact_input footer_contact_textarea" placeholder="Mensaje" required="required"></textarea>
+									<button class="footer_contact_button">Enviar</button>
 								</form>
 							</div>
 						</div>
 					</div>
 
 					<!-- Footer Hours -->
+
 					<div class="col-lg-4 footer_col">
-						<div class="footer_hours">
-							<div class="footer_hours_title">Opening Hours</div>
-							<ul class="hours_list">
-								<li class="d-flex flex-row align-items-center justify-content-start">
-									<div>Monday – Thursday</div>
-									<div class="ml-auto">8.00 – 19.00</div>
-								</li>
-								<li class="d-flex flex-row align-items-center justify-content-start">
-									<div>Friday</div>
-									<div class="ml-auto">8.00 - 18.30</div>
-								</li>
-								<li class="d-flex flex-row align-items-center justify-content-start">
-									<div>Saturday</div>
-									<div class="ml-auto">9.30 – 17.00</div>
-								</li>
-								<li class="d-flex flex-row align-items-center justify-content-start">
-									<div>Sunday</div>
-									<div class="ml-auto">9.30 – 15.00</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="footer_bar">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="footer_bar_content d-flex flex-sm-row flex-column align-items-lg-center align-items-start justify-content-start">
-							<nav class="footer_nav">
-								<ul class="d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
-									<li class="active"><a href="index.html">Home</a></li>
-									<li><a href="about.html">About Us</a></li>
-									<li><a href="services.html">Services</a></li>
-									<li><a href="news.html">News</a></li>
-									<li><a href="contact.html">Contact</a></li>
-								</ul>
-							</nav>
-							<div class="footer_links">
-								<ul class="d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
-									<li><a href="#">Help Desk</a></li>
-									<li><a href="#">Emergency Services</a></li>
-									<li><a href="#">Appointment</a></li>
-								</ul>
+						<div class="departments">
+							<div class="container">
+								<div class="row">
+									<div class="col text-center">
+										<div class="section_title">Gobierno</div>
+										<div class="section_subtitle">En liena</div>
+									</div>
+								</div>
+								<div class="row dept_row">
+									<div class="col">
+										<div class="dept_slider_container_outer">
+											<div class="dept_slider_container">
+
+												<!-- Slider -->
+												<div class="owl-carousel dept_slider">
+													
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/Presidencia-logo.png" alt=""></div>
+													</div>
+
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/logoMinTic.jpg" alt=""></div>
+													</div>
+
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/no-mas-filas-tramites-sin-complicaciones.png" alt=""></div>
+													</div>
+
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/LOGO-URNA-GA-01.png" alt=""></div>
+													</div>
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/6_sirvo-a-mi-pais_200x200.png" alt=""></div>
+													</div>
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/logoPortal.png" alt=""></div>
+													</div>
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/compraEficiente.png" alt=""></div>
+													</div>
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/logoCoColombia.png" alt=""></div>
+													</div>
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/logoMetrologia.jpg" alt=""></div>
+													</div>
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/logoCodigoPostal.png" alt=""></div>
+													</div>
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/correo.png" alt=""></div>
+													</div>
+												</div>
+												
+											</div>
+
+										</div>
+											
+									</div>
+								</div>
 							</div>
-							<div class="footer_phone ml-lg-auto">
-								<i class="fa fa-phone" aria-hidden="true"></i>
-								<span>+34 586 778 8892</span>
-							</div>
 						</div>
-					</div>
+
 				</div>
 			</div>
 		</div>
 	</footer>
 
+
 <script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/megaMenu.js"></script>
 <script src="styles/bootstrap4/popper.js"></script>
 <script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
 <script src="plugins/easing/easing.js"></script>
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
-<script src="js/contact.js"></script>
+<script src="js/custom.js"></script>
 </body>
 </html>
