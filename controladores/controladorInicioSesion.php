@@ -18,14 +18,12 @@
 		}
 		else
 		{	
-			//En caso contrario se redirecciona nuevamente al index  y se destruye la sesion 
 			header('location: ../index.html');
 			session_destroy();  
 		}
 	}
 	else
 	{
-		//En caso contrario se redirecciona nuevamente al index  y se destruye la sesion 
 		header('location: ../index.html');
 		session_destroy();
 	}

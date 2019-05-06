@@ -10,6 +10,10 @@
 <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="styles/contact.css">
 <link rel="stylesheet" type="text/css" href="styles/contact_responsive.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="styles/megaMenu.css">
 </head>
 <body>
 
@@ -48,7 +52,7 @@
 	<!-- Home -->
 
 	<div class="home">
-		<div class="background_image" style="background-image:url(images/sedes.jpg)"></div> <!--Variable urlImgTipoEntrada-->
+		<div class="background_image" style="background-image:url(images/directorio.jpg)"></div>
 
 		<!-- Header -->
 
@@ -65,8 +69,8 @@
 									<div class="header_top_extra d-flex flex-row align-items-center justify-content-start ml-auto">
 										<div class="header_top_nav">
 											<ul class="d-flex flex-row align-items-center justify-content-start">
-												<li><a href="#">Mesa de ayuda</a></li>
-												<li><a href="#">Inicio de Sesión</a></li>
+												<li><a href="#">Correo interno</a></li>
+												<li><a href="#">Cerrar Sesión</a></li>
 												<li><a href="#">Moodle</a></li>
 											</ul>
 										</div>
@@ -78,34 +82,84 @@
 					</div>
 				</div>
 				<div class="header_nav" id="header_nav_pin">
-					<div class="header_nav_inner">
-						<div class="header_nav_container">
-							<div class="container">
-								<div class="row">
-									<div class="col">
-										<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
-											<nav class="main_nav">
-												<ul class="d-flex flex-row align-items-center justify-content-start">
-													<li class="active"><a href="index.html">Inicio</a></li>
-													<li>
-														Big menu
-													</li>
-													
-												</ul>
-											</nav>
-											<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
-												<form action="#" id="search_container_form" class="search_container_form">
-													<input type="text" class="search_container_input" placeholder="Consultar" required="required">
-													<button class="search_container_button"><i class="fa fa-search" aria-hidden="true"></i></button>
-												</form>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+					<nav class="navbar navbar-expand-lg navbar-light megamenuback">
+					    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+										<span class="navbar-toggler-icon"></span>
+							  </button>
+					    <div class="collapse navbar-collapse mega-dropdown " id="navbar" >
+					     <ul class="navbar-nav mr-auto">
+					      <li class="nav-item dropdown megamenu-li">
+					       <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menú</a>
+					       <div class="dropdown-menu megamenu dropdown-Megamenu" aria-labelledby="dropdown01" style="overflow: auto;">
+					        <div class="row">
+					         <div class="col-sm-6 col-lg-3">
+					          <h5>Nosotros</h5>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="index.html">Inicio</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="sedes.html">Sedes</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="entidad.html">Entida</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="directorioFuncionarios.html">Directorio Funcionarios</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="directorioInstitucional.html">Directorio Institucional</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="proceso.html">Procesos y Procedimientos</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="#">Correo Interno</a>
+					         </div>
+					         <div class="col-sm-6 col-lg-3">
+					          <h5>Infórmate</h5>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="noticias.html">Noticias</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="datosAbiertos.html">Datos Abiertos</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="convocatorias.html">Convocatorias</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="pqr.html">Preguntas y respuestas</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="metas.html">Metas, Objetivos e indicadores</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="ofertasEmpleo.html">Ofertas de empleo</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="control.html">Control</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="informacionAdicional.html">Información Adicional</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="poblacionVulnerable.html">Población Vulnerable</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="glosario.html">Glosario</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="contrataciones.html">Contrataciones</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="ejecucionContratos.html">Ejecución de contratos</a>
+					         </div>
+							 <div class="col-sm-6 col-lg-3">
+					          <h5>Documentos</h5>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="rendicionCuentas.html">Rendición de cuentas</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="informes.html">Informes</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="estudios.html">Estudios e investigaciones</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="proyectos.html">Proyectos en ejecución</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="informePqr.html">Informes de PQRS</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="normatividad.html">Normatividad</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="politicas.html">Políticas y lineamientos</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="planes.html">Planes</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="programas.html">Programas</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="presupuesto.html">Presupuesto</a>
+					         </div>
+							 <div class="col-sm-6 col-lg-3">
+					          <h5>Participa</h5>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="calendario.html">Calendario de Actividades</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="ninosNinasAdolecentes.html">Niños, Niñas y Adolecentes</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="retos.html">Retos de participacón</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="encuesta.html">Encuesta</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="instanciasParticipacion.html">Instancias de Participación</a>
+					         </div>
+					          <div class="col-sm-6 col-lg-3">
+					          <h5>Atención Ciudadana</h5>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="transparenciaAcceso.html">Transparencia y acceso</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="tramites.html">Tramites y servicios</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="mecanismos.html">Mecanismos de control</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="transparencia.html">Transparencia</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="solicitudes.html">Recepción de solicitudes</a>
+					          <a class="dropdown-item dropdown-item-mgmenu" href="proteccionDatos.html">Política y protección de datos</a>
+					         </div>
+					        </div>
+					       </div>
+					      </li>
+					     </ul>
+					     <div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
+							<form action="#" id="search_container_form" class="search_container_form">
+								<input type="text" class="search_container_input" placeholder="Consultar" required="required">
+								<button class="search_container_button"><i class="fa fa-search" aria-hidden="true"></i></button>
+							</form>
 						</div>
-					</div>
-				</div>	
+					    </div>
+
+					   </nav>	
 			</div>
 		</header>
 
@@ -193,8 +247,8 @@
 </div>
 	<!-- Footer -->
 
-		<footer class="footer">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/footer.jpg" data-speed="0.8"></div>
+	<footer class="footer" style="background-image: url(images/footer2.jpg");">
+		<div   ></div>
 		<div class="footer_content">
 			<div class="container">
 				<div class="row">
@@ -203,7 +257,7 @@
 					<div class="col-lg-3 footer_col">
 						<div class="footer_about">
 							<div class="logo">
-								<a href="#">health<span>+</span></a>	
+								<a href="index.html">ESE HOSPITAL SAN MARTÍN DE PORRES</a>	
 							</div>
 							<div class="footer_about_text">Lorem ipsum dolor sit amet, lorem maximus consectetur adipiscing elit. Donec malesuada lorem maximus mauris.</div>
 							<div class="footer_social">
@@ -217,7 +271,7 @@
 								</ul>
 							</div>
 							<div class="copyright">
-								Desarrollado 
+								Desarrollado por
 							</div>
 						</div>
 					</div>
@@ -225,85 +279,109 @@
 					<!-- Footer Contact -->
 					<div class="col-lg-5 footer_col">
 						<div class="footer_contact">
-							<div class="footer_contact_title">Quick Contact</div>
+							<div class="footer_contact_title">Contactanos</div>
 							<div class="footer_contact_form_container">
 								<form action="#" class="footer_contact_form" id="footer_contact_form">
 									<div class="d-flex flex-xl-row flex-column align-items-center justify-content-between">
-										<input type="text" class="footer_contact_input" placeholder="Name" required="required">
-										<input type="email" class="footer_contact_input" placeholder="E-mail" required="required">
+										<input type="text" class="footer_contact_input" placeholder="Nombre" required="required">
+										<input type="email" class="footer_contact_input" placeholder="Correo electronico" required="required">
 									</div>
-									<textarea class="footer_contact_input footer_contact_textarea" placeholder="Message" required="required"></textarea>
-									<button class="footer_contact_button">send message</button>
+									<textarea class="footer_contact_input footer_contact_textarea" placeholder="Mensaje" required="required"></textarea>
+									<button class="footer_contact_button">Enviar</button>
 								</form>
 							</div>
 						</div>
 					</div>
 
 					<!-- Footer Hours -->
+
 					<div class="col-lg-4 footer_col">
-						<div class="footer_hours">
-							<div class="footer_hours_title">Opening Hours</div>
-							<ul class="hours_list">
-								<li class="d-flex flex-row align-items-center justify-content-start">
-									<div>Monday – Thursday</div>
-									<div class="ml-auto">8.00 – 19.00</div>
-								</li>
-								<li class="d-flex flex-row align-items-center justify-content-start">
-									<div>Friday</div>
-									<div class="ml-auto">8.00 - 18.30</div>
-								</li>
-								<li class="d-flex flex-row align-items-center justify-content-start">
-									<div>Saturday</div>
-									<div class="ml-auto">9.30 – 17.00</div>
-								</li>
-								<li class="d-flex flex-row align-items-center justify-content-start">
-									<div>Sunday</div>
-									<div class="ml-auto">9.30 – 15.00</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="footer_bar">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="footer_bar_content d-flex flex-sm-row flex-column align-items-lg-center align-items-start justify-content-start">
-							<nav class="footer_nav">
-								<ul class="d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
-									<li class="active"><a href="index.html">Home</a></li>
-									<li><a href="about.html">About Us</a></li>
-									<li><a href="services.html">Services</a></li>
-									<li><a href="news.html">News</a></li>
-									<li><a href="contact.html">Contact</a></li>
-								</ul>
-							</nav>
-							<div class="footer_links">
-								<ul class="d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
-									<li><a href="#">Help Desk</a></li>
-									<li><a href="#">Emergency Services</a></li>
-									<li><a href="#">Appointment</a></li>
-								</ul>
+						<div class="departments">
+							<div class="container">
+								<div class="row">
+									<div class="col text-center">
+										<div class="section_title">Gobierno</div>
+										<div class="section_subtitle">En liena</div>
+									</div>
+								</div>
+								<div class="row dept_row">
+									<div class="col">
+										<div class="dept_slider_container_outer">
+											<div class="dept_slider_container">
+
+												<!-- Slider -->
+												<div class="owl-carousel dept_slider">
+													
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/Presidencia-logo.png" alt=""></div>
+													</div>
+
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/logoMinTic.jpg" alt=""></div>
+													</div>
+
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/no-mas-filas-tramites-sin-complicaciones.png" alt=""></div>
+													</div>
+
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/LOGO-URNA-GA-01.png" alt=""></div>
+													</div>
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/6_sirvo-a-mi-pais_200x200.png" alt=""></div>
+													</div>
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/logoPortal.png" alt=""></div>
+													</div>
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/compraEficiente.png" alt=""></div>
+													</div>
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/logoCoColombia.png" alt=""></div>
+													</div>
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/logoMetrologia.jpg" alt=""></div>
+													</div>
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/logoCodigoPostal.png" alt=""></div>
+													</div>
+													<!-- Slide -->
+													<div class="owl-item dept_item">
+														<div class="dept_image"><img src="images/correo.png" alt=""></div>
+													</div>
+												</div>
+												
+											</div>
+
+										</div>
+											
+									</div>
+								</div>
 							</div>
-							<div class="footer_phone ml-lg-auto">
-								<i class="fa fa-phone" aria-hidden="true"></i>
-								<span>+34 586 778 8892</span>
-							</div>
 						</div>
-					</div>
+
 				</div>
 			</div>
 		</div>
 	</footer>
-
+	
 <script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/megaMenu.js"></script>
 <script src="styles/bootstrap4/popper.js"></script>
 <script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
 <script src="plugins/easing/easing.js"></script>
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
-<script src="js/contact.js"></script>
+<script src="js/custom.js"></script>
 </body>
 </html>

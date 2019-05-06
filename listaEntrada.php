@@ -1,7 +1,15 @@
+<?php
+	
+	require_once 'modelos/modeloEntrada.php';
+	
+	$todasEntradas = new modeloEntrada(NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+	$consultaEntradas = $todasEntradas->listaEntradas();   
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Nueva Entrada</title>
+<title>Administrar Entradas</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Health medical template project">
@@ -29,9 +37,8 @@
 				<button class="menu_search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
 			</form>
 			<ul>
-				<li class="menu_item"><a href="index.html">Inicio</a></li>
-				<h1>Nosotros</h1>
-				<li class="menu_item"><a href="#"></a></li>
+				<li class="menu_item"><a href="index.html">Home</a></li>
+				<li class="menu_item"><a href="#">About us</a></li>
 				<li class="menu_item"><a href="#">Services</a></li>
 				<li class="menu_item"><a href="news.html">News</a></li>
 				<li class="menu_item"><a href="contact.html">Contact</a></li>
@@ -49,6 +56,7 @@
 		</div>
 	</div>
 	
+		
 	<!-- Home -->
 
 	<div class="home">
@@ -163,12 +171,13 @@
 			</div>
 		</header>
 
+
 		<div class="home_container">
 			<div class="container">
 				<div class="row">
 					<div class="col">
 						<div class="home_content">
-							<div class="home_title">Nueva Entrada</div>
+							<div class="home_title">Administración de entradas</div>
 						</div>
 					</div>
 				</div>
@@ -186,19 +195,31 @@
 				<div class="col-lg-8 contact_col">
 					<div class="contact_form">
 						<div class="contact_title">
-							Datos de entrada de contenido
+							Lista de entradas
 						</div>
-						<div><spam>_____________________________________________</spam></div>
+
+						<div><spam>_______________________________</spam></div>
 						<br>
-					<div class="contact_form_container">
-							<form action="controladores/controladorEntrada.php" id="contact_form" class="contact_form" method="POST">
-								<label>Titulo Entrada: </label>
-								<input type="text" id="contact_input" class="contact_input" placeholder="Titulo de entrada" required="required" name="tituloEntrada">
-								<label>Descripción Entrada: </label>
-								<textarea class="contact_input contact_textarea" id="contact_textarea" placeholder="Descripción Entrada" required="required" name="descripcionEntrada"></textarea>
-								<br>
-								<label>Tipo Entrada: </label>
-								<select name="tipoEntrada" id="contact_input" class="contact_input" placeholder="Seleccione una opción">
+				
+					</div>
+				</div>
+				
+					<div class="col-lg-8 contact_col">
+					<div class="contact_form">
+						<div class="contact_title">
+							<spam>Seleccione uno o varios parametros</spam>
+						</div>
+						<br>
+						<form>
+						<div class="row" style="float: right;">
+							<h4>Titulo Entrada  </h4>
+							<input type="text" id="contact_input" class="contact_input" placeholder="Titulo de entrada" required="required" name="tituloEntrada">
+							<h4>   Fecha Entrada  </h4>
+							<input type="text" id="contact_input" class="contact_input" placeholder="Fecha de entrada" required="required" name="fechaEntrada">
+							
+							<h4>   Tipo Entrada  </h4>
+			
+							<select name="tipoEntrada" id="contact_input" class="contact_input" placeholder="Seleccione una opción" >
 									<option>Seleccione</option>
 									<option>Sedes</option>
 									<option>Entidad</option>
@@ -224,51 +245,52 @@
 									<option>Politicas y lineamientos</option>
 									<option>Planes</option>
 									<option>Programas</option>
-
-								</select>
-								<button class="contact_button" id="contact_button">Enviar Entrada</button>
-								
-							</form>
-							<button class="contact_button" id="contact_button" onclick="location.href='listaEntrada.html'">Administrar Entradas</button>
+							</select>	
 						</div>
+						<div>
+							<button class="contact_button" id="contact_button">Consultar</button>
 						</div>
-
-				</div>
-				
-				<!-- Make an Appointment -->
-				<div class="col-lg-4 contact_col">
-					<div class="info_form_container">
-						<div class="info_form_title">Archivos</div>
-						<form action="#" class="info_form" id="info_form">
-							<input type="text" class="info_input" placeholder="Url Imagen (jpg,jpge,png)">
-							<input type="file" class="info_form_button" name="upload">
-							<button type="file" class="info_form_button">Seleccionar Imagen</button>
-							<br>
-							<br>
-							<input type="text" class="info_input" placeholder="Url Documento (pdf,doc,docx,xls)" required="required">
-							<button class="info_form_button">Seleccionar Documento</button>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<button class="info_form_button">Enviar Archivos</button>
+						
 						</form>
-					</div>
-				</div>
-
-				
-				
-
-				<!-- Info Boxes -->
-
+						<br>
 				
 					</div>
 				</div>
+
+				<!-- Consulta de sedes  -->
+
+			<div class="table-responsive">
+				<table class="table table-hover table-border">
+				  <thead>
+				    <tr>
+				      <th scope="col">Codigo</th>
+				      <th scope="col">Titulo</th>
+				      <th scope="col">Descripcion</th>
+				      <th scope="col">Tipo</th>
+				      <th scope="col">Opción</th>
+				    </tr>
+				  </thead>
+				  <tbody id="developers">
+					<?php foreach ($consultaEntradas as $entradas): ?>
+				    <tr>
+				      <th scope="row"><?php echo $entradas->idEntrada ?></th>
+				      <td><?php echo $entradas->tituloEntrada ?></td>
+				      <td><?php echo $entradas->descripcionEntrada ?></td>
+				      <td><?php echo $entradas->idTipoEntrada ?></td>
+				      <td>
+				      	<button class="contact_button_list" id="contact_button">Actualizar</button>
+				      	<button class="contact_button_list" styles" style="background: #404040" id="contact_button">Desactivar</button>
+				      </td>
+				    </tr>
+				    <?php endforeach; ?>
+				  </tbody>
+				</table>
+			</div>
 			</div>
 		</div>
 	</div>
 </div>
+	
 	<!-- Footer -->
 
 	<footer class="footer" style="background-image: url(images/footer2.jpg");">
@@ -399,9 +421,9 @@
 		</div>
 	</footer>
 
-
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/megaMenu.js"></script>
+<script src="js/pagination.js"></script>
 <script src="styles/bootstrap4/popper.js"></script>
 <script src="styles/bootstrap4/bootstrap.min.js"></script>
 <script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
