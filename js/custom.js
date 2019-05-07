@@ -28,7 +28,6 @@ $(document).ready(function()
 	var menuActive = false;
 
 	setHeader();
-	openLoginModal();
 
 	$(window).on('resize', function()
 	{
@@ -234,12 +233,13 @@ $(document).ready(function()
 	6. Init the Login modal
 
 	*/
+	$("#show-login").click(function(){
+		openLoginModal()
+	});
 
 	function openLoginModal()
 	{	
-		$("#show-login-modal").click(()=>{
-			$('#exampleModalCenter').modal('toggle');	
-		});
+		$('#loginModal').modal('toggle');
 	}
 
 });
