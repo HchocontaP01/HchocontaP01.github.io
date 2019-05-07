@@ -12,7 +12,7 @@
 		private $urlImagen; 
 		private $urlDocumento; 
 		private $estadoEntrada; 
-		private $idtipoEntrada; 
+		private $idTipoEntrada; 
 		
 		function __construct($inId, $inFecha, $inTitulo, $inDescripcion, $inUrlI, $inUrlD, $inEstado, $inTipo)
 		{
@@ -23,7 +23,7 @@
 			$this->urlImagen = $inUrlI; 
 			$this->urlDocumento = $inUrlD; 
 			$this->estadoEntrada = $inEstado; 
-			$this->idtipoEntrada = $inTipo; 
+			$this->idTipoEntrada = $inTipo; 
 		}
 
 		function insertarEntrada ()
@@ -34,9 +34,9 @@
 
 			try 
 			{
-				$sql = $pdo->prepare("INSERT INTO entradas (idEntrada,fechaEntrada,tituloEntrada,descripcionEntrada,urlImagenEntrada,urlDocumentoEntrada,estadoEntrada,idTipoEntrada)
-				VALUES (:idEntrada,:fechaEntrada,:tituloEntrada,:descripcionEntrada,:urlImagenEntrada,:urlDocumentoEntrada,:estadoEntrada,:idTipoEntrada)");
-				$sql->bindParam(":idEntrada",$this->idEntrada);
+				$sql = $pdo->prepare("INSERT INTO entradas (fechaEntrada,tituloEntrada,descripcionEntrada,urlImagenEntrada,urlDocumentoEntrada,estadoEntrada,idTipoEntrada)
+				VALUES (:fechaEntrada,:tituloEntrada,:descripcionEntrada,:urlImagenEntrada,:urlDocumentoEntrada,:estadoEntrada,:idTipoEntrada)");
+				
 				$sql->bindParam(":fechaEntrada",$this->fechaEntrada);
 				$sql->bindParam(":tituloEntrada",$this->tituloEntrada);
 				$sql->bindParam(":descripcionEntrada",$this->descripcionEntrada);
@@ -48,8 +48,6 @@
 				$sql->execute();
 
 				$pdo = NULL;  
-
-				echo $this->idTipoEntrada; 
 			} 
 			catch(Exception $e) 
 			{

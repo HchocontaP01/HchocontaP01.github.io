@@ -19,7 +19,7 @@ CREATE TABLE entradas
     urlImagenEntrada VARCHAR(100) NULL,
     urlDocumentoEntrada VARCHAR(100) NULL,
     estadoEntrada VARCHAR(40) NOT NULL,
-    idTipoEntrada INT,
+    idTipoEntrada INT NOT NULL,
     PRIMARY KEY (idEntrada), 
 	FOREIGN KEY (idTipoEntrada) 
     REFERENCES tipoEntrada (idTipoEntrada)

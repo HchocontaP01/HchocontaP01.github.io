@@ -18,99 +18,99 @@
 	}
 	elseif ($tipoEntrada == "Entidad") 
 	{
-		$idTipoEntrada = 3;
+		$idTipoEntrada = 2;
 	}
 	elseif ($tipoEntrada == "Directorio de funcionarios") 
 	{
-		$idTipoEntrada = 4;
+		$idTipoEntrada = 3;
 	}
 	elseif ($tipoEntrada == "Directorio institucional") 
 	{
-		$idTipoEntrada = 5;
+		$idTipoEntrada = 4;
 	}
 	elseif ($tipoEntrada == "Procesos y procedimientos") 
 	{
-		$idTipoEntrada = 6;
+		$idTipoEntrada = 5;
 	}
 	elseif ($tipoEntrada == "Noticias") 
 	{
-		$idTipoEntrada = 7;
+		$idTipoEntrada = 6;
 	}
 	elseif ($tipoEntrada == "Datos abiertos") 
 	{
-		$idTipoEntrada = 8;
+		$idTipoEntrada = 7;
 	}
 	elseif ($tipoEntrada == "Convocatorias") 
 	{
-		$idTipoEntrada = 9;
+		$idTipoEntrada = 8;
 	}
 	elseif ($tipoEntrada == "Preguntas y respuestas") 
 	{
-		$idTipoEntrada = 10;
+		$idTipoEntrada = 9;
 	}
 	elseif ($tipoEntrada == "Metas, Objetivos e indicadores") 
 	{
-		$idTipoEntrada = 11;
+		$idTipoEntrada = 10;
 	}
 	elseif ($tipoEntrada == "Ofertas de empleo") 
 	{
-		$idTipoEntrada = 12;
+		$idTipoEntrada = 11;
 	}
 	elseif ($tipoEntrada == "Control") 
 	{
-		$idTipoEntrada = 13;
+		$idTipoEntrada = 12;
 	}
 	elseif ($tipoEntrada == "Información adicional") 
 	{
-		$idTipoEntrada = 14;
+		$idTipoEntrada = 13;
 	}
 	elseif ($tipoEntrada == "Población vulnerable") 
 	{
-		$idTipoEntrada = 15;
+		$idTipoEntrada = 14;
 	}
 	elseif ($tipoEntrada == "Glosario") 
 	{
-		$idTipoEntrada = 16;
+		$idTipoEntrada = 15;
 	}
 	elseif ($tipoEntrada == "Contrataciones") 
 	{
-		$idTipoEntrada = 17;
+		$idTipoEntrada = 16;
 	}
 	elseif ($tipoEntrada == "Ejecución de contratos") 
 	{
-		$idTipoEntrada = 18;
+		$idTipoEntrada = 17;
 	}
 	elseif ($tipoEntrada == "Informes") 
 	{
-		$idTipoEntrada = 19;
+		$idTipoEntrada = 18;
 	}
 	elseif ($tipoEntrada == "Estudios e investigaciones") 
 	{
-		$idTipoEntrada = 20;
+		$idTipoEntrada = 19;
 	}
 	elseif ($tipoEntrada == "Proyectos en ejecución") 
 	{
-		$idTipoEntrada = 21;
+		$idTipoEntrada = 20;
 	}
 	elseif ($tipoEntrada == "Informes de PQRS") 
 	{
-		$idTipoEntrada =22;
+		$idTipoEntrada =21;
 	}
 	elseif ($tipoEntrada == "Normatividad") 
 	{
-		$idTipoEntrada =23;
+		$idTipoEntrada =22;
 	}
 	elseif ($tipoEntrada == "Politicas y lineamientos") 
 	{
-		$idTipoEntrada =24;
+		$idTipoEntrada =23;
 	}
 	elseif ($tipoEntrada == "Planes") 
 	{
-		$idTipoEntrada =25;
+		$idTipoEntrada =24;
 	}
 	elseif ($tipoEntrada == "Programas") 
 	{
-		$idTipoEntrada =26;
+		$idTipoEntrada =25;
 	}
 
 	$nuevaEntrada = new modeloEntrada($idEntrada,$fechaEntrada,$tituloEntrada,$descripcionEntrada,$urlImagen,$urlDoc,$estadoEntrada,$idTipoEntrada);
