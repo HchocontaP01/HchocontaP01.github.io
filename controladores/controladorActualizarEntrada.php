@@ -2,13 +2,13 @@
 
 	require_once '../modelos/modeloEntrada.php';
 
-	$idEntrada = NULL; 
+	$idEntrada = $_POST["idEntrada"]; 
 	$fechaEntrada = date("Y/m/d"); 
 	$tituloEntrada = $_POST["tituloEntrada"];
 	$descripcionEntrada = $_POST["descripcionEntrada"];
 	$urlImagen = NULL; 
 	$urlDoc = NULL; 
-	$estadoEntrada = "Activo";
+	$estadoEntrada = $_POST["estadoEntrada"];
 	$tipoEntrada = $_POST["tipoEntrada"];
 	$idTipoEntrada = 0; 
 
@@ -115,7 +115,4 @@
 
 	$nuevaEntrada = new modeloEntrada($idEntrada,$fechaEntrada,$tituloEntrada,$descripcionEntrada,$urlImagen,$urlDoc,$estadoEntrada,$idTipoEntrada);
 
-	$nuevaEntrada->insertarEntrada();  
-?>
-
-	
+	$nuevaEntrada->actualizarEntrada();

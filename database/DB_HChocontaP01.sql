@@ -25,6 +25,8 @@ CREATE TABLE entradas
     REFERENCES tipoEntrada (idTipoEntrada)
 );  
 
+
+INSERT INTO tipoentrada VALUES (NULL,'Sedes','Sedes del Hospital ESE San Martín de Porres','images/sedes.jpg'); 
 INSERT INTO tipoentrada VALUES (NULL,'Entidad','Nos orienta un propósito común','images/entidad.jpg'); 
 INSERT INTO tipoentrada VALUES (NULL,'Directorio de Funcionarios','Conoce quienes somos','images/directorioFuncionarios.jpg');
 INSERT INTO tipoentrada VALUES (NULL,'Directorio institucional','Encuentra información de entidades y dependencias','images/directorioInstitucional.jpg'); 

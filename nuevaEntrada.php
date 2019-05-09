@@ -1,13 +1,25 @@
 <?php
 	
-	$idTipoEntrada = $_GET['idTipoEntrada']; 
+	session_start(); 
+	require_once 'modelos/modeloEntrada.php';
 
+	if ($_SESSION['usuarioSesion']==null || $_SESSION['usuarioSesion']=='') 
+	{
+		session_destroy();  
+		header('location: index.html'); 
+	}
+	else
+	{
+		
+	}
+
+	
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Variable nombreTipoEntrada</title>
+<title>Nueva Entrada</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Health medical template project">
@@ -35,8 +47,9 @@
 				<button class="menu_search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
 			</form>
 			<ul>
-				<li class="menu_item"><a href="index.html">Home</a></li>
-				<li class="menu_item"><a href="#">About us</a></li>
+				<li class="menu_item"><a href="index.html">Inicio</a></li>
+				<h1>Nosotros</h1>
+				<li class="menu_item"><a href="#"></a></li>
 				<li class="menu_item"><a href="#">Services</a></li>
 				<li class="menu_item"><a href="news.html">News</a></li>
 				<li class="menu_item"><a href="contact.html">Contact</a></li>
@@ -54,7 +67,6 @@
 		</div>
 	</div>
 	
-		
 	<!-- Home -->
 
 	<div class="home">
@@ -162,7 +174,7 @@
 				<div class="row">
 					<div class="col">
 						<div class="home_content">
-							<div class="home_title">Variable nombreTipoEntrada</div>
+							<div class="home_title">Nueva Entrada</div>
 						</div>
 					</div>
 				</div>
@@ -180,59 +192,83 @@
 				<div class="col-lg-8 contact_col">
 					<div class="contact_form">
 						<div class="contact_title">
-							Variabre descripcionTipoEntrada
+							Datos de entrada de contenido
 						</div>
-						<!--Variable descripcionTipoEntrada-->
-						<div><spam>______________________________________________________________________________</spam></div>
+						<div><spam>_____________________________________________</spam></div>
 						<br>
+					<div class="contact_form_container">
+							<form action="controladores/controladorEntrada.php" id="contact_form" class="contact_form" method="POST">
+								<label>Titulo Entrada: </label>
+								<input type="text" id="contact_input" class="contact_input" placeholder="Titulo de entrada" required="required" name="tituloEntrada">
+								<label>Descripción Entrada: </label>
+								<textarea class="contact_input contact_textarea" id="contact_textarea" placeholder="Descripción Entrada" required="required" name="descripcionEntrada"></textarea>
+								<br>
+								<label>Tipo Entrada: </label>
+								<select name="tipoEntrada" id="contact_input" class="contact_input" placeholder="Seleccione una opción">
+									<option>Seleccione</option>
+									<option>Sedes</option>
+									<option>Entidad</option>
+									<option>Directorio de Funcionarios</option>
+									<option>Directorio institucional</option>
+									<option>Procesos y procedimientos</option>
+									<option>Noticias</option>
+									<option>Datos abiertos</option>
+									<option>Convocatorias</option>
+									<option>Preguntas y respuestas</option>
+									<option>Metas, Objetivos e indicadores</option>
+									<option>Ofertas de empleo</option>
+									<option>Control</option>
+									<option>Información adicional</option>
+									<option>Población vulnerable</option>
+									<option>Glosario</option>
+									<option>Ejecución de contratos</option>
+									<option>Informes</option>
+									<option>Estudios e investigaciones</option>
+									<option>Proyectos en ejecución</option>
+									<option>Informes de PQRS</option>
+									<option>Normatividad</option>
+									<option>Politicas y lineamientos</option>
+									<option>Planes</option>
+									<option>Programas</option>
+
+								</select>
+								<button class="contact_button" id="contact_button">Enviar Entrada</button>
+								
+							</form>
+							<button class="contact_button" id="contact_button" onclick="location.href='listaEntrada.php'">Administrar Entradas</button>
+						</div>
+						</div>
+
+				</div>
 				
+				<!-- Make an Appointment -->
+				<div class="col-lg-4 contact_col">
+					<div class="info_form_container">
+						<div class="info_form_title">Archivos</div>
+						<form action="#" class="info_form" id="info_form">
+							<input type="text" class="info_input" placeholder="Url Imagen (jpg,jpge,png)">
+							<input type="file" class="info_form_button" name="upload">
+							<button type="file" class="info_form_button">Seleccionar Imagen</button>
+							<br>
+							<br>
+							<input type="text" class="info_input" placeholder="Url Documento (pdf,doc,docx,xls)" required="required">
+							<button class="info_form_button">Seleccionar Documento</button>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<button class="info_form_button">Enviar Archivos</button>
+						</form>
 					</div>
 				</div>
-				<!-- Consulta -->	
+
+				
+				
 
 				<!-- Info Boxes -->
 
-				<div class="info">
-					<div class="container">
-						<div class="row row-eq-height">
-
-							<!-- Info Box -->
-							<div class="col-lg-4 info_box_col">
-								<div class="info_box">
-									<div class="info_image"><img src="images/info_1.jpg" alt=""></div>
-									<div class="info_content">
-										<div class="info_title">Free Consultations</div>
-										<div class="info_text">Arcu neque, scelerisque eget ligula ac, congue tempor felis. Integer tempor, eros a egestas finibus, dolor risus mollis.</div>
-										<div class="button info_button"><a href="#"><span>read more</span><span>read more</span></a></div>
-									</div>
-								</div>
-							</div>
-
-							<!-- Info Box -->
-							<div class="col-lg-4 info_box_col">
-								<div class="info_box">
-									<div class="info_image"><img src="images/info_2.jpg" alt=""></div>
-									<div class="info_content">
-										<div class="info_title">Emergency Care</div>
-										<div class="info_text">Morbi arcu neque, scelerisque eget ligula ac, congue tempor felis. Integer tempor, eros a egestas finibus, dolor risus.</div>
-										<div class="button info_button"><a href="#"><span>read more</span><span>read more</span></a></div>
-									</div>
-								</div>
-							</div>
-
-							<!-- Info Box -->
-							<div class="col-lg-4 info_box_col">
-								<div class="info_box">
-									<div class="info_image"><img src="images/info_2.jpg" alt=""></div>
-									<div class="info_content">
-										<div class="info_title">Emergency Care</div>
-										<div class="info_text">Morbi arcu neque, scelerisque eget ligula ac, congue tempor felis. Integer tempor, eros a egestas finibus, dolor risus.</div>
-										<div class="button info_button"><a href="#"><span>read more</span><span>read more</span></a></div>
-									</div>
-								</div>
-							</div>
-
-						</div>
+				
 					</div>
 				</div>
 			</div>
@@ -368,7 +404,8 @@
 			</div>
 		</div>
 	</footer>
-	
+
+
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/megaMenu.js"></script>
 <script src="styles/bootstrap4/popper.js"></script>

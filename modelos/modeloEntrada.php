@@ -63,7 +63,7 @@
 
 			try 
 			{
-				$sql = $pdo->prepare("SELECT * FROM entradas"); 
+				$sql = $pdo->prepare("SELECT * FROM entradas WHERE estadoEntrada = 'Activo' ORDER BY fechaEntrada DESC"); 
 
 				$sql->execute();
 				return $sql->fetchAll(PDO::FETCH_OBJ);
@@ -92,7 +92,7 @@
 				$sql->bindParam(":urlImagenEntrada",$this->urlImagenEntrada);
 				$sql->bindParam(":urlDocumentoEntrada",$this->urlDocumentoEntrada);
 				$sql->bindParam(":estadoEntrada",$this->estadoEntrada); 
-				$sql->bindParam(":idTipoEntrada",$this->idTipoEntrada);
+				$sql->bindParam(":idTipoEntrada",$this->idTipoEntrada); 
 
 				$sql->execute();
 
@@ -105,6 +105,33 @@
 				die($e->getMessage());
 			}
 		}
+
+		function inactivarEntrada ()
+		{
+
+			$conectando = new conexionDB(); 
+			$pdo = $conectando::conectar(); 
+
+			try 
+			{
+				$sql = $pdo->prepare("UPDATE entradas SET  estadoEntrada = :estadoEntrada WHERE idEntrada = :idEntrada
+				");
+				$sql->bindParam(":idEntrada",$this->idEntrada);
+				$sql->bindParam(":estadoEntrada",$this->estadoEntrada);  
+
+				$sql->execute();
+
+				$pdo = NULL;  
+
+				echo $this->idTipoEntrada; 
+			} 
+			catch(Exception $e) 
+			{
+				die($e->getMessage());
+			}
+		}
+		
+
 
 		function entradasXtitulo()
 		{
@@ -165,5 +192,26 @@
 				die($e->getMessage());
 			}
 		}
+		
+		function entradaXidEntrada()
+		{
+
+			$conectando = new conexionDB(); 
+			$pdo = $conectando::conectar(); 
+
+			try 
+			{
+				$sql = $pdo->prepare("SELECT entradas.idEntrada, entradas.fechaEntrada, entradas.tituloEntrada, entradas.descripcionEntrada, entradas.urlImagenEntrada, entradas.urlDocumentoEntrada, entradas.estadoEntrada, tipoentrada.nombreTipoEntrada FROM entradas INNER JOIN tipoentrada ON entradas.idTipoEntrada = tipoentrada.idTipoEntrada WHERE idEntrada = :idEntrada"); 
+				$sql->bindParam(":idEntrada",$this->idEntrada);
+				$sql->execute();
+				return $sql->fetchAll(PDO::FETCH_OBJ);
+				$pdo = NULL;
+			} 
+			catch(Exception $e) 
+			{
+				die($e->getMessage());
+			}
+		}
+
 	}
 ?>

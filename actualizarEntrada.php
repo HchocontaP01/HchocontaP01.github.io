@@ -1,7 +1,53 @@
+<?php
+	
+	session_start(); 
+	require_once 'modelos/modeloEntrada.php';
+
+	if ($_SESSION['usuarioSesion']==null || $_SESSION['usuarioSesion']=='') 
+	{
+		session_destroy();  
+		header('location: index.html'); 
+	}
+	else
+	{
+		if (empty($_GET['idEntrada'])) 
+		{
+				header('location: listaEntrada.php'); 
+		}	
+		else
+		{
+			$idEntrada = $_GET['idEntrada']; 
+			$objEntrada = new modeloEntrada($idEntrada,null,null,null,null,null,null,null);
+			$entrada = $objEntrada->entradaXidEntrada();
+			$numeroFilas = count($entrada); 
+			if ($numeroFilas == 0) 
+			{
+				header('location: listaEntrada.php');
+			}
+			else
+			{
+				foreach ($entrada as $valorEntrada) 
+				{
+					$idEntradaVista = $valorEntrada->idEntrada;
+					$fechaEntradaVista = $valorEntrada->fechaEntrada;
+					$tituloEntradaVista = $valorEntrada->tituloEntrada;
+					$descripcionEntradaVista = $valorEntrada->descripcionEntrada; 
+					$urlImagenEntradaVista = $valorEntrada->urlImagenEntrada; 
+					$urlDocumentoEntradaVista = $valorEntrada->urlDocumentoEntrada;
+					$estadoEntradaVista = $valorEntrada->estadoEntrada; 
+					$tipoEntradaVista = $valorEntrada->nombreTipoEntrada;
+				}
+			}
+		} 
+	}
+
+	
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Nueva Entrada</title>
+<title>Actualizar Entrada</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Health medical template project">
@@ -70,7 +116,7 @@
 										<div class="header_top_nav">
 											<ul class="d-flex flex-row align-items-center justify-content-start">
 												<li><a href="#">Correo interno</a></li>
-												<li><a href="#">Cerrar Sesión</a></li>
+												<li><a href="controladores/controladorCerrarSesion.php">Cerrar Sesión</a></li>
 												<li><a href="#">Moodle</a></li>
 											</ul>
 										</div>
@@ -156,7 +202,7 @@
 				<div class="row">
 					<div class="col">
 						<div class="home_content">
-							<div class="home_title">Nueva Entrada</div>
+							<div class="home_title">Actualizar Entrada</div>
 						</div>
 					</div>
 				</div>
@@ -174,19 +220,21 @@
 				<div class="col-lg-8 contact_col">
 					<div class="contact_form">
 						<div class="contact_title">
-							Datos de entrada de contenido
+							Datos de entrada
 						</div>
 						<div><spam>_____________________________________________</spam></div>
 						<br>
 					<div class="contact_form_container">
-							<form action="controladores/controladorEntrada.php" id="contact_form" class="contact_form" method="POST">
+							<form action="controladores/controladorActualizarEntrada.php" id="contact_form" class="contact_form" method="POST">
+								<input type="hidden" name="idEntrada" value="<?php echo $idEntradaVista?>"  >
 								<label>Titulo Entrada: </label>
-								<input type="text" id="contact_input" class="contact_input" placeholder="Titulo de entrada" required="required" name="tituloEntrada">
+								<input type="text" id="contact_input" class="contact_input" placeholder="Titulo de entrada" required="required" name="tituloEntrada" value="<?php echo $tituloEntradaVista;  ?>">
 								<label>Descripción Entrada: </label>
-								<textarea class="contact_input contact_textarea" id="contact_textarea" placeholder="Descripción Entrada" required="required" name="descripcionEntrada"></textarea>
+								<textarea class="contact_input contact_textarea" id="contact_textarea" placeholder="Descripción Entrada" required="required" name="descripcionEntrada" ><?php echo $descripcionEntradaVista; ?></textarea>
 								<br>
 								<label>Tipo Entrada: </label>
-								<select name="tipoEntrada" id="contact_input" class="contact_input" placeholder="Seleccione una opción">
+								<select name="tipoEntrada" id="contact_input" class="contact_input notItemOne" placeholder="Seleccione una opción">
+									<option><?php echo $tipoEntradaVista ?></option>
 									<option>Seleccione</option>
 									<option>Sedes</option>
 									<option>Entidad</option>
@@ -214,10 +262,20 @@
 									<option>Programas</option>
 
 								</select>
+								<br>
+								<label>Estado Entrada: </label>
+								<select name="estadoEntrada" id="contact_input" class="contact_input notItemOne" placeholder="Seleccione una opción">
+									<option><?php echo $estadoEntradaVista ?></option>
+									<option>Seleccione</option>
+									<option>Activo</option>
+									<option>Inactivo</option>
+									
+
+								</select>
 								<button class="contact_button" id="contact_button">Enviar Entrada</button>
 								
 							</form>
-							<button class="contact_button" id="contact_button" onclick="location.href='listaEntrada.html'">Administrar Entradas</button>
+							<button class="contact_button" id="contact_button" onclick="location.href='listaEntrada.php'">Administrar Entradas</button>
 						</div>
 						</div>
 

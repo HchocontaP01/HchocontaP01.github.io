@@ -47,8 +47,8 @@
 				<li class="menu_item"><a href="convocatorias.html">Convocatorias</a></li>
 				<li class="menu_item"><a href="pqr.html">Preguntas y Respuestas</a></li>
 				<li class="menu_item"><a href="metas.html">Metas, Objetivos e indicadores</a></li>
-				<li class="menu_item"><a href="ofertasEmpleo.html">Ofertas de empleo</a></li>
-				<li class="menu_item"><a href="ofertasEmpleo.html"></a></li>
+				<!--<li class="menu_item"><a href="ofertasEmpleo.html">Ofertas de empleo</a></li>
+				<li class="menu_item"><a href="ofertasEmpleo.html"></a></li>-->
 			</ul>
 		</div>
 		<div class="menu_social">
@@ -80,7 +80,7 @@
 	        		<div class="container">
 	        			<div class="form-row">
 	        				<div class="col">
-	        					<form class="FormularioLogin" action="controlers/controladorInicioSesion.php" method="POST">
+	        					<form class="FormularioLogin" action="controladores/controladorInicioSesion.php" method="POST">
 	        						<div class="form-group">
 	        							<input type="text" class="info_form_dep info_input" name="usuario" placeholder="Usuario">
 	        						</div>

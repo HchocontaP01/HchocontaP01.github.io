@@ -1,11 +1,22 @@
 <?php
 	
+	session_start(); 
 	require_once 'modelos/modeloEntrada.php';
-	
-	$todasEntradas = new modeloEntrada(NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
-	$consultaEntradas = $todasEntradas->listaEntradas();   
 
+	if ($_SESSION['usuarioSesion']==null || $_SESSION['usuarioSesion']=='') 
+	{
+		session_destroy();  
+		header('location: index.html'); 
+	}
+	else
+	{
+		$todasEntradas = new modeloEntrada(NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+		$consultaEntradas = $todasEntradas->listaEntradas(); 
+	}
+
+	
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,7 +89,7 @@
 										<div class="header_top_nav">
 											<ul class="d-flex flex-row align-items-center justify-content-start">
 												<li><a href="#">Correo interno</a></li>
-												<li><a href="#">Cerrar Sesión</a></li>
+												<li><a href="controladores/controladorCerrarSesion.php">Cerrar Sesión</a></li>
 												<li><a href="#">Moodle</a></li>
 											</ul>
 										</div>
@@ -266,8 +277,8 @@
 				      <td><?php echo $entradas->descripcionEntrada ?></td>
 				      <td><?php echo $entradas->idTipoEntrada ?></td>
 				      <td>
-				      	<button class="contact_button_list" id="contact_button">Actualizar</button>
-				      	<button class="contact_button_list" styles" style="background: #404040" id="contact_button">Desactivar</button>
+				      	<button class="contact_button_list" id="contact_button"  onclick="location.href='actualizarEntrada.php?idEntrada=<?php echo $entradas->idEntrada ?>'">Actualizar</button>
+				      	<button class="contact_button_list" styles" style="background: #404040" id="contact_button" onclick="location.href='controladores/controladorEstadoEntrada.php?idEntrada=<?php echo $entradas->idEntrada ?>'">Desactivar</button>
 				      </td>
 				    </tr>
 				    <?php endforeach; ?>

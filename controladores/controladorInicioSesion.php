@@ -14,7 +14,7 @@
 		if ($contrasena==$contraEntrante)
 		{
 			$_SESSION['usuarioSesion'] = $usuarioEntrante; 
-			header('location: ../nuevaEntrada.html'); 
+			header('location: ../nuevaEntrada.php'); 
 		}
 		else
 		{	
