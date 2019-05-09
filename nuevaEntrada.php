@@ -1,3 +1,10 @@
+<?php
+	if(!isset($_SESSION['user']))
+	{
+		 header("location: index.php");
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,7 +77,7 @@
 										<div class="header_top_nav">
 											<ul class="d-flex flex-row align-items-center justify-content-start">
 												<li><a href="#">Correo interno</a></li>
-												<li><a href="#">Cerrar Sesión</a></li>
+												<li><a href="modelos/cerrar_sesion.php">Cerrar Sesión</a></li>
 												<li><a href="#">Moodle</a></li>
 											</ul>
 										</div>
