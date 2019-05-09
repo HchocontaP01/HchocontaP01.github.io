@@ -81,11 +81,12 @@
 	        			<div class="form-row">
 	        				<div class="col">
 	        					<form class="FormularioLogin" action="controladores/controladorInicioSesion.php" method="POST">
+
 	        						<div class="form-group">
-	        							<input type="text" class="info_form_dep info_input" name="usuario" placeholder="Usuario">
+	        							<input type="text" class="info_form_dep info_input" name="username" placeholder="Usuario">
 	        						</div>
 	        						<div class="form-group">
-	        							<input type="password" class="info_form_dep info_input" name="contrasena" placeholder="Contraseña">
+	        							<input type="password" class="info_form_dep info_input" name="password" placeholder="Contraseña">
 	        						</div>
 	        						<div class="form-group">
 	        							<button class="info_form_button">INGRESAR</button>

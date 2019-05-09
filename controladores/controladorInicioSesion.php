@@ -1,31 +1,34 @@
 <?php
 
-	session_start(); 
+	include_once '../modelos/usuario.php';
+	include_once '../modelos/usuario_sesion.php';
 
-	$usuario = "Admin"; 
-	$contrasena = "Admin1234"; 
+	$userSession = new UserSession();
+	$user = new User();
 
-
-	$usuarioEntrante = $_POST["usuario"]; 
-	$contraEntrante = $_POST["contrasena"]; 
-
-
-	if ($usuario == $usuarioEntrante) {
-		if ($contrasena==$contraEntrante)
-		{
-			$_SESSION['usuarioSesion'] = $usuarioEntrante; 
-			header('location: ../nuevaEntrada.php'); 
-		}
-		else
-		{	
-			header('location: ../index.html');
-			session_destroy();  
-		}
-	}
-	else
-	{
-		header('location: ../index.html');
-		session_destroy();
-	}
-
+	if(isset($_SESSION['user'])){
+        //echo "Hay sesión";
+        $user->setUser($userSession->getCurrentUser());
+        if(isset($_POST['username']) && isset($_POST['password'])){
+	       // echo "Validación de login";
+	        $userForm = $_POST['username'];
+	        $passForm = $_POST['password'];
+	        if($user->userExists($userForm, $passForm)){
+	            //echo "usuario validado";
+	            $userSession->setCurrentUser($userForm);
+	            header('location: ../nuevaEntrada.php');
+	        }else{
+	            //echo "nombre de usuario y/o password incorrecto";
+	            $errorLogin = "Nombre de usuario y/o password es incorrecto";
+	            echo $errorLogin;
+	            session_destroy();  
+	        }
+   		}
+    }
+    else
+    {
+        $errorLogin = "No hay sesion";
+        echo $errorLogin;
+        session_destroy();  
+    }
 ?>

@@ -1,6 +1,17 @@
 <?php
 	
-	$idTipoEntrada = $_GET['idTipoEntrada']; 
+	session_start();
+	require_once 'modelos/modeloEntrada.php';
+
+	if ($_SESSION['user']==null || $_SESSION['user']=='') 
+	{
+		session_destroy();  
+		header('location: index.php'); 
+	}
+	else
+	{	
+		$idTipoEntrada = $_GET['idTipoEntrada']; 
+	}
 
 ?>
 

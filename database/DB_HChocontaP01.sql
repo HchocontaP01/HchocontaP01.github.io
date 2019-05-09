@@ -3,28 +3,39 @@ USE HChocontaP01;
 
 CREATE TABLE tipoEntrada
 (
-	idTipoEntrada INT AUTO_INCREMENT, 
+    idTipoEntrada INT AUTO_INCREMENT, 
     nombreTipoEntrada VARCHAR(50) NOT NULL,
     descripcionTipoEntrada VARCHAR(50) NOT NULL, 
     urlImagTipoEntrada VARCHAR(50) NOT NULL, 
     PRIMARY KEY (idTipoEntrada)
-);	
+);  
+
+CREATE TABLE usuarios
+(
+    id INT AUTO_INCREMENT,
+    nombre VARCHAR (120) NOT NULL,
+    username VARCHAR (60) NOT NULL,
+    password VARCHAR (250) NOT NULL,
+    PRIMARY KEY (id)
+);
 
 CREATE TABLE entradas
 (
-	idEntrada INT AUTO_INCREMENT,
+    idEntrada INT AUTO_INCREMENT,
     fechaEntrada DATE NOT NULL, 
-	tituloEntrada VARCHAR(50) NOT NULL,
+    tituloEntrada VARCHAR(50) NOT NULL,
     descripcionEntrada VARCHAR(500) NOT NULL, 
     urlImagenEntrada VARCHAR(100) NULL,
     urlDocumentoEntrada VARCHAR(100) NULL,
     estadoEntrada VARCHAR(40) NOT NULL,
     idTipoEntrada INT NOT NULL,
     PRIMARY KEY (idEntrada), 
-	FOREIGN KEY (idTipoEntrada) 
+    FOREIGN KEY (idTipoEntrada) 
     REFERENCES tipoEntrada (idTipoEntrada)
 );  
 
+
+INSERT INTO usuarios VALUES (NULL, 'Administrador', 'Admin', '3f28c9e5f49efe2ce08c056ec6ecc5d1'); --contraseña Admin.1234
 
 INSERT INTO tipoentrada VALUES (NULL,'Sedes','Sedes del Hospital ESE San Martín de Porres','images/sedes.jpg'); 
 INSERT INTO tipoentrada VALUES (NULL,'Entidad','Nos orienta un propósito común','images/entidad.jpg'); 

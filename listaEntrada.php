@@ -3,10 +3,10 @@
 	session_start(); 
 	require_once 'modelos/modeloEntrada.php';
 
-	if ($_SESSION['usuarioSesion']==null || $_SESSION['usuarioSesion']=='') 
+	if ($_SESSION['user']==null || $_SESSION['user']=='') 
 	{
 		session_destroy();  
-		header('location: index.html'); 
+		header('location: index.php'); 
 	}
 	else
 	{
