@@ -109,7 +109,7 @@
 			                        <div class="inner-mega-menu">
 			                        	<h4>NOSOTROS:</h4>
 
-			                            <p> <i class="fa fa-home"> </i><a href="index.html"> | Inicio</a> </p>
+			                            <p> <i class="fa fa-home"> </i><a href="index.php"> | Inicio</a> </p>
 			                            <p> <i class="fa fa-building"> </i><a href="consultaEntrada.php?idTipoEntrada=1"> | Sedes</a></p>
 			                            <p><i class="fa fa-hospital-o"> </i><a href="consultaEntrada.php?idTipoEntrada=2"> | Entidad</a></p>
 			                            <p><i class="fa fa-address-card"></i><a href="consultaEntrada.php?idTipoEntrada=3"> | Directorio Funcionarios</a></p>
@@ -211,9 +211,9 @@
 						<form>
 						<div class="row" style="float: right;">
 							<h4>Titulo Entrada  </h4>
-							<input type="text" id="contact_input" class="contact_input" placeholder="Titulo de entrada" required="required" name="tituloEntrada">
+							<input type="text" id="contact_input" class="contact_input" placeholder="Titulo de entrada" name="tituloEntrada">
 							<h4>   Fecha Entrada  </h4>
-							<input type="text" id="contact_input" class="contact_input" placeholder="Fecha de entrada" required="required" name="fechaEntrada">
+							<input type="text" id="contact_input" class="contact_input" placeholder="Fecha de entrada" name="fechaEntrada">
 							
 							<h4>   Tipo Entrada  </h4>
 			
@@ -347,6 +347,8 @@
 									<div class="col text-center">
 										<div class="section_title">Gobierno</div>
 										<div class="section_subtitle">En liena</div>
+										<br>
+										<div class="btnTransparencia"><a href="transparenciaAcceso.php">Transparencia y acceso a la información</a></div>
 									</div>
 								</div>
 								<div class="row dept_row">

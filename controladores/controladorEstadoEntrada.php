@@ -10,4 +10,5 @@
 	$nuevaEntrada = new modeloEntrada($idEntrada,NULL,NULL,NULL,NULL,NULL,$estadoEntrada,NULL);
 
 	$nuevaEntrada->inactivarEntrada();
+	header('location: ../listaEntrada.php')
 ?>

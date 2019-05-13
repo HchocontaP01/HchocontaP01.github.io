@@ -116,3 +116,5 @@
 	$nuevaEntrada = new modeloEntrada($idEntrada,$fechaEntrada,$tituloEntrada,$descripcionEntrada,$urlImagen,$urlDoc,$estadoEntrada,$idTipoEntrada);
 
 	$nuevaEntrada->actualizarEntrada();
+	header('location: ../nuevaEntrada.php'); 
+?>

@@ -1,24 +1,37 @@
 <?php
-	
-	session_start();
-	require_once 'modelos/modeloEntrada.php';
 
-	if ($_SESSION['user']==null || $_SESSION['user']=='') 
-	{
-		session_destroy();  
-		header('location: index.php'); 
-	}
-	else
-	{	
+		require_once 'modelos/modeloEntrada.php';	
+	
 		$idTipoEntrada = $_GET['idTipoEntrada']; 
-	}
+		$objConsultaEntrada = new modeloEntrada(null,null,null,null,null,null,null,$idTipoEntrada);
+		$aConsultaEntrada = $objConsultaEntrada->entradasXtipo(); 
+		$numeroFilas = count($aConsultaEntrada); 
+		if ($numeroFilas == 0) 
+		{
+			header('location: index.php');
+		}
+		else
+		{
+			foreach ($aConsultaEntrada as $valorEntrada) 
+			{
+				$idEntradaVista = $valorEntrada->idEntrada;
+				$fechaEntradaVista = $valorEntrada->fechaEntrada;
+				$tituloEntradaVista = $valorEntrada->tituloEntrada;
+				$descripcionEntradaVista = $valorEntrada->descripcionEntrada; 
+				$urlImagenEntradaVista = $valorEntrada->urlImagenEntrada; 
+				$urlDocumentoEntradaVista = $valorEntrada->urlDocumentoEntrada;
+				$estadoEntradaVista = $valorEntrada->estadoEntrada; 
+				$tipoEntradaVista = $valorEntrada->nombreTipoEntrada;
+				$descripcionTipoEntradaVista = $valorEntrada->descripcionTipoEntrada; 
+			}
+		}
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Variable nombreTipoEntrada</title>
+<title><?php echo $tipoEntradaVista; ?></title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Health medical template project">
@@ -107,7 +120,7 @@
 			                        <div class="inner-mega-menu">
 			                        	<h4>NOSOTROS:</h4>
 
-			                            <p> <i class="fa fa-home"> </i><a href="index.html"> | Inicio</a> </p>
+			                            <p> <i class="fa fa-home"> </i><a href="index.php"> | Inicio</a> </p>
 			                            <p> <i class="fa fa-building"> </i><a href="consultaEntrada.php?idTipoEntrada=1"> | Sedes</a></p>
 			                            <p><i class="fa fa-hospital-o"> </i><a href="consultaEntrada.php?idTipoEntrada=2"> | Entidad</a></p>
 			                            <p><i class="fa fa-address-card"></i><a href="consultaEntrada.php?idTipoEntrada=3"> | Directorio Funcionarios</a></p>
@@ -173,7 +186,7 @@
 				<div class="row">
 					<div class="col">
 						<div class="home_content">
-							<div class="home_title">Variable nombreTipoEntrada</div>
+							<div class="home_title"><?php echo $tipoEntradaVista; ?></div>
 						</div>
 					</div>
 				</div>
@@ -191,7 +204,7 @@
 				<div class="col-lg-8 contact_col">
 					<div class="contact_form">
 						<div class="contact_title">
-							Variabre descripcionTipoEntrada
+							<?php echo $descripcionTipoEntradaVista; ?>
 						</div>
 						<!--Variable descripcionTipoEntrada-->
 						<div><spam>______________________________________________________________________________</spam></div>
@@ -202,50 +215,31 @@
 				<!-- Consulta -->	
 
 				<!-- Info Boxes -->
-
+				
 				<div class="info">
 					<div class="container">
 						<div class="row row-eq-height">
 
 							<!-- Info Box -->
+							<?php foreach ($aConsultaEntrada as $entradas): ?>			
 							<div class="col-lg-4 info_box_col">
 								<div class="info_box">
-									<div class="info_image"><img src="images/info_1.jpg" alt=""></div>
+									
+									<div class="info_image" ><img src="<?php echo $urlImagenEntradaVista;?>" alt=""></div>
 									<div class="info_content">
-										<div class="info_title">Free Consultations</div>
-										<div class="info_text">Arcu neque, scelerisque eget ligula ac, congue tempor felis. Integer tempor, eros a egestas finibus, dolor risus mollis.</div>
-										<div class="button info_button"><a href="#"><span>read more</span><span>read more</span></a></div>
+										<div class="info_title"><?php echo $entradas->tituloEntrada; ?></div>
+										<div class="info_text"><?php echo $entradas->descripcionEntrada; ?></div>
+										<div class="button info_button"><a href="detalleEntrada.php?idEntrada=<?php echo $entradas->idEntrada ?>"><span>Ver más</span><span>Ver más</span></a></div>
 									</div>
+								
 								</div>
 							</div>
-
-							<!-- Info Box -->
-							<div class="col-lg-4 info_box_col">
-								<div class="info_box">
-									<div class="info_image"><img src="images/info_2.jpg" alt=""></div>
-									<div class="info_content">
-										<div class="info_title">Emergency Care</div>
-										<div class="info_text">Morbi arcu neque, scelerisque eget ligula ac, congue tempor felis. Integer tempor, eros a egestas finibus, dolor risus.</div>
-										<div class="button info_button"><a href="#"><span>read more</span><span>read more</span></a></div>
-									</div>
-								</div>
-							</div>
-
-							<!-- Info Box -->
-							<div class="col-lg-4 info_box_col">
-								<div class="info_box">
-									<div class="info_image"><img src="images/info_2.jpg" alt=""></div>
-									<div class="info_content">
-										<div class="info_title">Emergency Care</div>
-										<div class="info_text">Morbi arcu neque, scelerisque eget ligula ac, congue tempor felis. Integer tempor, eros a egestas finibus, dolor risus.</div>
-										<div class="button info_button"><a href="#"><span>read more</span><span>read more</span></a></div>
-									</div>
-								</div>
-							</div>
-
+							<br>
+							<?php endforeach; ?>					
 						</div>
 					</div>
 				</div>
+				
 			</div>
 		</div>
 	</div>
@@ -307,6 +301,8 @@
 									<div class="col text-center">
 										<div class="section_title">Gobierno</div>
 										<div class="section_subtitle">En liena</div>
+										<br>
+										<div class="btnTransparencia"><a href="transparenciaAcceso.php">Transparencia y acceso a la información</a></div>
 									</div>
 								</div>
 								<div class="row dept_row">

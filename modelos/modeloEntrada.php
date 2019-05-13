@@ -40,8 +40,8 @@
 				$sql->bindParam(":fechaEntrada",$this->fechaEntrada);
 				$sql->bindParam(":tituloEntrada",$this->tituloEntrada);
 				$sql->bindParam(":descripcionEntrada",$this->descripcionEntrada);
-				$sql->bindParam(":urlImagenEntrada",$this->urlImagenEntrada);
-				$sql->bindParam(":urlDocumentoEntrada",$this->urlDocumentoEntrada);
+				$sql->bindParam(":urlImagenEntrada",$this->urlImagen);
+				$sql->bindParam(":urlDocumentoEntrada",$this->urlDocumento);
 				$sql->bindParam(":estadoEntrada",$this->estadoEntrada); 
 				$sql->bindParam(":idTipoEntrada",$this->idTipoEntrada);
 
@@ -141,7 +141,7 @@
 
 			try 
 			{
-				$sql = $pdo->prepare("SELECT * FROM entradas WHERE tituloEntrada = :tituloEntrada"); 
+				$sql = $pdo->prepare("SELECT * FROM entradas WHERE tituloEntrada = %:tituloEntrada%"); 
 				$sql->bindParam(":tituloEntrada",$this->tituloEntrada);
 				$sql->execute();
 				return $sql->fetchAll(PDO::FETCH_OBJ);
@@ -181,8 +181,11 @@
 
 			try 
 			{
-				$sql = $pdo->prepare("SELECT * FROM entradas WHERE tipoEntrada = :tipoEntrada"); 
+				$sql = $pdo->prepare("SELECT entradas.idEntrada, entradas.fechaEntrada, entradas.tituloEntrada, entradas.descripcionEntrada, entradas.urlImagenEntrada, entradas.urlDocumentoEntrada, entradas.estadoEntrada, entradas.estadoEntrada, tipoentrada.nombreTipoEntrada, tipoentrada.descripcionTipoEntrada, tipoentrada.urlImagTipoEntrada FROM entradas INNER JOIN tipoentrada
+					 ON entradas.idTipoEntrada = tipoentrada.idTipoEntrada 
+					 WHERE entradas.idTipoEntrada = :tipoEntrada AND entradas.estadoEntrada = 'Activo'" ); 
 				$sql->bindParam(":tipoEntrada",$this->idTipoEntrada);
+
 				$sql->execute();
 				return $sql->fetchAll(PDO::FETCH_OBJ);
 				$pdo = NULL;
@@ -202,6 +205,26 @@
 			try 
 			{
 				$sql = $pdo->prepare("SELECT entradas.idEntrada, entradas.fechaEntrada, entradas.tituloEntrada, entradas.descripcionEntrada, entradas.urlImagenEntrada, entradas.urlDocumentoEntrada, entradas.estadoEntrada, tipoentrada.nombreTipoEntrada FROM entradas INNER JOIN tipoentrada ON entradas.idTipoEntrada = tipoentrada.idTipoEntrada WHERE idEntrada = :idEntrada"); 
+				$sql->bindParam(":idEntrada",$this->idEntrada);
+				$sql->execute();
+				return $sql->fetchAll(PDO::FETCH_OBJ);
+				$pdo = NULL;
+			} 
+			catch(Exception $e) 
+			{
+				die($e->getMessage());
+			}
+		}
+
+		function entradaXdetalle()
+		{
+
+			$conectando = new conexionDB(); 
+			$pdo = $conectando::conectar(); 
+
+			try 
+			{
+				$sql = $pdo->prepare("SELECT * FROM entradas WHERE idEntrada = :idEntrada"); 
 				$sql->bindParam(":idEntrada",$this->idEntrada);
 				$sql->execute();
 				return $sql->fetchAll(PDO::FETCH_OBJ);

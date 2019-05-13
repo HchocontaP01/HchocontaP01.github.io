@@ -1,69 +1,34 @@
 <?php
+
+		require_once 'modelos/modeloEntrada.php';	
 	
-	session_start();
-	require_once 'modelos/modeloEntrada.php';
-
-	if ($_SESSION['user']==null || $_SESSION['user']=='') 
-	{
-		session_destroy();  
-		header('location: index.php'); 
-	}
-	else
-	{	
-		$imgCargado = 0; 
-		$docCargado = 0; 
-		if (isset($_FILES['cargarImagen'])||isset($_FILES['cargarDocumento'])) 
-		{ 
-			$nombreTemporalImagen = $_FILES['cargarImagen']['tmp_name'];
-			$nombreImagen = $_FILES['cargarImagen']['name'];
-			$tipoImagen = $_FILES['cargarImagen']['type'];
-			$fileNameCmps = explode(".", $nombreImagen);
-			$extensionImagen = strtolower(end($fileNameCmps));
-			$rutaI = 'files/'.$nombreImagen; 
-			$extPermitidoI = array('jpg', 'png');
-			if (in_array($extensionImagen, $extPermitidoI)) 
-			{
-				if (move_uploaded_file($nombreTemporalImagen, $rutaI)) 
-				{
-					$imgCargado = 1; 
-				}
-				else
-				{
-					$imgCargado = 0;  
-				}
-			}
-		}
-
-		if (isset($_FILES['cargarDocumento'])) 
+		$idEntrada = $_GET['idEntrada']; 
+		$objDetalleEntrada = new modeloEntrada($idEntrada,null,null,null,null,null,null,null);
+		$aConsultaEntrada = $objDetalleEntrada->entradaXdetalle(); 
+		$numeroFilas = count($aConsultaEntrada); 
+		if ($numeroFilas == 0) 
 		{
-			$nombreTemporalDocumento = $_FILES['cargarDocumento']['tmp_name'];
-			$nombreDocumento = $_FILES['cargarDocumento']['name'];
-			$tipoDocumento = $_FILES['cargarDocumento']['type'];
-			$fileNameCmps = explode(".", $nombreDocumento);
-			$extensionDocumento = strtolower(end($fileNameCmps));
-			$rutaD = 'files/'.$nombreDocumento;  
-			$extPermitidoD = array('doc', 'docx', 'pdf','xls','xlsx');
-			if (in_array($extensionDocumento, $extPermitidoD)) 
+			header('location: index.php');
+		}
+		else
+		{
+			foreach ($aConsultaEntrada as $valorEntrada) 
 			{
-				if (move_uploaded_file($nombreTemporalDocumento, $rutaD)) 
-				{
-					$docCargado = 1; 
-				}
-				else
-				{
-					$docCargado = 0;  
-				}
-
+				$idEntradaVista = $valorEntrada->idEntrada;
+				$fechaEntradaVista = $valorEntrada->fechaEntrada;
+				$tituloEntradaVista = $valorEntrada->tituloEntrada;
+				$descripcionEntradaVista = $valorEntrada->descripcionEntrada; 
+				$urlImagenEntradaVista = $valorEntrada->urlImagenEntrada; 
+				$urlDocumentoEntradaVista = $valorEntrada->urlDocumentoEntrada;
 			}
 		}
-	}
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Nueva Entrada</title>
+<title>Detalle</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Health medical template project">
@@ -81,7 +46,7 @@
 
 <div class="super_container">
 
-	<!-- Menu -->
+		<!-- Menu -->
 
 	<div class="menu trans_500">
 		<div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
@@ -91,9 +56,8 @@
 				<button class="menu_search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
 			</form>
 			<ul>
-				<li class="menu_item"><a href="index.html">Inicio</a></li>
-				<h1>Nosotros</h1>
-				<li class="menu_item"><a href="#"></a></li>
+				<li class="menu_item"><a href="index.html">Home</a></li>
+				<li class="menu_item"><a href="#">About us</a></li>
 				<li class="menu_item"><a href="#">Services</a></li>
 				<li class="menu_item"><a href="news.html">News</a></li>
 				<li class="menu_item"><a href="contact.html">Contact</a></li>
@@ -111,6 +75,7 @@
 		</div>
 	</div>
 	
+		
 	<!-- Home -->
 
 	<div class="home">
@@ -181,7 +146,7 @@
 								          <p> <i class="fa fa-file-text-o"> </i><a href="consultaEntrada.php?idTipoEntrada=17">  | Informes</a></p>
 								          <p> <i class="fa fa-bar-chart"> </i><a href="consultaEntrada.php?idTipoEntrada=18">  | Estudios e investigaciones</a></p>
 								          <p> <i class="fa fa-cogs"> </i><a href="consultaEntrada.php?idTipoEntrada=19">  | Proyectos en ejecución</a></p>
-								          <p> <i class="fa fa-file-archive-o"><a href="consultaEntrada.php?idTipoEntrada=20">  </i> | Informes de PQRS</a></i>
+								          <p> <i class="fa fa-file-archive-o"></i> <a href="consultaEntrada.php?idTipoEntrada=20">  | Informes de PQRS</a></p>
 								          <p> <i class="fa fa-list"> </i><a href="consultaEntrada.php?idTipoEntrada=21">  | Normatividad</a></p>
 								          <p> <i class="fa fa-clone"> </i><a href="consultaEntrada.php?idTipoEntrada=22">  | Políticas y lineamientos</a></p>
 								          <p> <i class="fa fa-cubes"> </i><a href="consultaEntrada.php?idTipoEntrada=23">  | Planes</a></p>
@@ -192,7 +157,7 @@
 			                            <h4>Participa:</h4>
 								          <p> <i class="fa fa-calendar"> </i><a href="consultaEntrada.php?idTipoEntrada=26">  | Calendario de Actividades</a></p>
 								          <p> <i class="fa fa-anchor"> </i><a href="consultaEntrada.php?idTipoEntrada=27">  | Retos de participacón</a></p>
-								          <p> <i class="fa fa-check-square-o"></i><a href="consultaEntrada.php?idTipoEntrada=28"> | Encuesta</a></P>
+								          <p> <i class="fa fa-check-square-o"></i><a href="consultaEntrada.php?idTipoEntrada=28"> | Encuesta</a></p>
 								          <p> <i class="fa fa-bullhorn"> </i><a href="consultaEntrada.php?idTipoEntrada=29">  | Instancias de Participación</a></p>
 			                        </div> 
 			                        <div class="inner-mega-menu">
@@ -209,8 +174,9 @@
 			            </ul>
 			        </nav>
 				</div>
+			</div>
 		</header>
-
+</div>
 
 
 		<div class="home_container">
@@ -218,127 +184,42 @@
 				<div class="row">
 					<div class="col">
 						<div class="home_content">
-							<div class="home_title">Nueva Entrada</div>
+							<div class="home_title">Detalle Entrada</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<!-- Titulo Pagina -->
+				<!-- transparencia -->	
 
-	<div class="contact">
+				<!-- FAQ & News -->
+
+	<div class="stuff">
 		<div class="container">
 			<div class="row">
 
-				<!-- Contact form -->
-				<div class="col-lg-8 contact_col">
-					<div class="contact_form">
-						<div class="contact_title">
-							Datos de entrada de contenido
+				<!-- FAQ -->
+				<div class="col-lg-12">
+					<div class="faq">
+						<div class="faq_title"><?php echo $tituloEntradaVista;?></div>
+						<div class="faq_subtitle">Fecha: <?php echo $fechaEntradaVista;?> Codigo: <?php echo $idEntradaVista;?></div>
+						<div>
+							<img src="<?php echo $urlImagenEntradaVista;?>">
 						</div>
-						<div><spam>______________________________________________________</spam></div>
-						<br>
-					<div class="contact_form_container">
-							<form action="controladores/controladorEntrada.php" id="contact_form" class="contact_form" method="POST">
-								<input type="hidden" name="rutaImg" value="<?php echo $rutaI ?>">
-								<input type="hidden" name="rutaDoc" value="<?php echo $rutaD ?>">
-								<label>Titulo Entrada: </label>
-								<input type="text" id="contact_input" class="contact_input" placeholder="Titulo de entrada" required="required" name="tituloEntrada">
-								<label>Descripción Entrada: </label>
-								<textarea class="contact_input contact_textarea" id="contact_textarea" placeholder="Descripción Entrada" required="required" name="descripcionEntrada"></textarea>
-								<br>
-								<label>Tipo Entrada: </label>
-								<select name="tipoEntrada" id="contact_input" class="contact_input" placeholder="Seleccione una opción">
-									<option>Seleccione</option>
-									<option>Sedes</option>
-									<option>Entidad</option>
-									<option>Directorio de Funcionarios</option>
-									<option>Directorio institucional</option>
-									<option>Procesos y procedimientos</option>
-									<option>Noticias</option>
-									<option>Datos abiertos</option>
-									<option>Convocatorias</option>
-									<option>Preguntas y respuestas</option>
-									<option>Metas, Objetivos e indicadores</option>
-									<option>Ofertas de empleo</option>
-									<option>Control</option>
-									<option>Información adicional</option>
-									<option>Población vulnerable</option>
-									<option>Glosario</option>
-									<option>Ejecución de contratos</option>
-									<option>Informes</option>
-									<option>Estudios e investigaciones</option>
-									<option>Proyectos en ejecución</option>
-									<option>Informes de PQRS</option>
-									<option>Normatividad</option>
-									<option>Politicas y lineamientos</option>
-									<option>Planes</option>
-									<option>Programas</option>
-
-								</select>
-								<button class="contact_button" id="contact_button">Enviar Entrada</button>
-								
-							</form>
-							<button class="contact_button btnAdminEntrdas" id="contact_button" onclick="location.href='listaEntrada.php'">Administrar Entradas</button>
+						<div>
+							<?php echo $descripcionEntradaVista;?>
 						</div>
 						</div>
-
-				</div>
-				
-				<!-- Make an Appointment -->
-				<div class="col-lg-4 contact_col">
-					<div class="info_form_container">
-						<div class="info_form_title">Archivos</div>
-						<form action="nuevaEntrada.php" method="POST" class="info_form" id="info_form" enctype="multipart/form-data">
-							<?php
-							if ($imgCargado == 1) 
-							{
-								?><input type="text" class="info_input" placeholder="Url Imagen (jpg,jpge,png)" value="<?php echo $rutaI?>"><?php
-							}
-							else 
-							{
-								?><input type="text" class="info_input" placeholder="Url Imagen (jpg,jpge,png)"><?php
-							}
-							?>
-									
-							<label class="info_form_button labelCargar">Seleccionar Imagen <input type="file" id="cargar" name="cargarImagen"></label> 
-							<br>
-							<br>
-							<?php
-							if ($docCargado == 1) 
-							{
-								?><input type="text" class="info_input" placeholder="Url Documento (pdf,doc,docx,xls)" value="<?php echo $rutaD?>"><?php
-							}
-							else 
-							{
-								?><input type="text" class="info_input" placeholder="Url Imagen (jpg,jpge,png)"><?php
-							}
-							?>
-							<label class="info_form_button labelCargar">Seleccionar Documento<input type="file" id="cargar" name="cargarDocumento"></label> 
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<button class="info_form_button">Cargar Archivos</button>
-						</form>
-					</div>
-				</div>
-
-				
-				
-
-				<!-- Info Boxes -->
-
-				
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+
 </div>
+
+				<!-- fin transparencia -->
+
 	<!-- Footer -->
 
 	<footer class="footer" style="background-image: url(images/footer2.jpg");">
@@ -470,8 +351,7 @@
 			</div>
 		</div>
 	</footer>
-
-
+	
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/megaMenu.js"></script>
 <script src="styles/bootstrap4/popper.js"></script>

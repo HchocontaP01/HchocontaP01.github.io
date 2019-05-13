@@ -6,8 +6,8 @@
 	$fechaEntrada = date("Y/m/d"); 
 	$tituloEntrada = $_POST["tituloEntrada"];
 	$descripcionEntrada = $_POST["descripcionEntrada"];
-	$urlImagen = NULL; 
-	$urlDoc = NULL; 
+	$urlImagen = $_POST["rutaImg"]; 
+	$urlDoc = $_POST["rutaDoc"]; 
 	$estadoEntrada = "Activo";
 	$tipoEntrada = $_POST["tipoEntrada"];
 	$idTipoEntrada = 0; 
@@ -116,6 +116,7 @@
 	$nuevaEntrada = new modeloEntrada($idEntrada,$fechaEntrada,$tituloEntrada,$descripcionEntrada,$urlImagen,$urlDoc,$estadoEntrada,$idTipoEntrada);
 
 	$nuevaEntrada->insertarEntrada();  
+	header('location: ../nuevaEntrada.php');
 ?>
 
 	

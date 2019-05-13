@@ -151,7 +151,7 @@
 			                        <div class="inner-mega-menu">
 			                        	<h4>NOSOTROS:</h4>
 
-			                            <p> <i class="fa fa-home"> </i><a href="index.html"> | Inicio</a> </p>
+			                            <p> <i class="fa fa-home"> </i><a href="index.php"> | Inicio</a> </p>
 			                            <p> <i class="fa fa-building"> </i><a href="consultaEntrada.php?idTipoEntrada=1"> | Sedes</a></p>
 			                            <p><i class="fa fa-hospital-o"> </i><a href="consultaEntrada.php?idTipoEntrada=2"> | Entidad</a></p>
 			                            <p><i class="fa fa-address-card"></i><a href="consultaEntrada.php?idTipoEntrada=3"> | Directorio Funcionarios</a></p>
@@ -279,33 +279,14 @@
 		</div>
 	</div>
 
-	<!-- CTA -->
-
-	<div class="cta">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/cta_1.jpg" data-speed="0.8"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="cta_container d-flex flex-xl-row flex-column align-items-xl-start align-items-center justify-content-xl-start justify-content-center">
-						<div class="cta_content text-xl-left text-center">
-							<div class="cta_title">Make an appointment with one of our professional Doctors.</div>
-							<div class="cta_subtitle">Morbi arcu neque, scelerisque eget ligula ac, congue tempor felis. Integer tempor, eros a egestas.</div>
-						</div>
-						<div class="button cta_button ml-xl-auto"><a href="#"><span>call now</span><span>call now</span></a></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
 	<!-- Services -->
 
 	<div class="services">
 		<div class="container">
 			<div class="row">
 				<div class="col text-center">
-					<div class="section_title">Our Services</div>
-					<div class="section_subtitle">to choose from</div>
+					<div class="section_title">Nuestros Servicios</div>
+					<div class="section_subtitle">Su salud y calidad de vida en nuestras manos</div>
 				</div>
 			</div>
 			<div class="row icon_boxes_row">
@@ -315,7 +296,7 @@
 					<div class="icon_box">
 						<div class="icon_box_title_container d-flex flex-row align-items-center justify-content-start">
 							<div class="icon_box_icon"><img src="images/icon_1.svg" alt=""></div>
-							<div class="icon_box_title">Cardiology</div>
+							<div class="icon_box_title">Cardiología</div>
 						</div>
 						<div class="icon_box_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lorem maximus malesuada lorem maximus mauris.</div>
 					</div>
@@ -326,7 +307,7 @@
 					<div class="icon_box">
 						<div class="icon_box_title_container d-flex flex-row align-items-center justify-content-start">
 							<div class="icon_box_icon"><img src="images/icon_2.svg" alt=""></div>
-							<div class="icon_box_title">Gastroenterology</div>
+							<div class="icon_box_title">Gastroenterología</div>
 						</div>
 						<div class="icon_box_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lorem maximus malesuada lorem maximus mauris.</div>
 					</div>
@@ -337,7 +318,7 @@
 					<div class="icon_box">
 						<div class="icon_box_title_container d-flex flex-row align-items-center justify-content-start">
 							<div class="icon_box_icon"><img src="images/icon_3.svg" alt=""></div>
-							<div class="icon_box_title">Medical Lab</div>
+							<div class="icon_box_title">Laboratorio Clinico</div>
 						</div>
 						<div class="icon_box_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lorem maximus malesuada lorem maximus mauris.</div>
 					</div>
@@ -348,7 +329,7 @@
 					<div class="icon_box">
 						<div class="icon_box_title_container d-flex flex-row align-items-center justify-content-start">
 							<div class="icon_box_icon"><img src="images/icon_4.svg" alt=""></div>
-							<div class="icon_box_title">Dental Care</div>
+							<div class="icon_box_title">Odontología</div>
 						</div>
 						<div class="icon_box_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lorem maximus malesuada lorem maximus mauris.</div>
 					</div>
@@ -359,7 +340,7 @@
 					<div class="icon_box">
 						<div class="icon_box_title_container d-flex flex-row align-items-center justify-content-start">
 							<div class="icon_box_icon"><img src="images/icon_5.svg" alt=""></div>
-							<div class="icon_box_title">Surgery</div>
+							<div class="icon_box_title">Cirugía</div>
 						</div>
 						<div class="icon_box_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lorem maximus malesuada lorem maximus mauris.</div>
 					</div>
@@ -370,7 +351,7 @@
 					<div class="icon_box">
 						<div class="icon_box_title_container d-flex flex-row align-items-center justify-content-start">
 							<div class="icon_box_icon"><img src="images/icon_6.svg" alt=""></div>
-							<div class="icon_box_title">Neurology</div>
+							<div class="icon_box_title">Neurología</div>
 						</div>
 						<div class="icon_box_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lorem maximus malesuada lorem maximus mauris.</div>
 					</div>
@@ -379,7 +360,7 @@
 			</div>
 			<div class="row">
 				<div class="col">
-					<div class="button services_button ml-auto mr-auto"><a href="#"><span>read more</span><span>read more</span></a></div>
+					<div class="button services_button ml-auto mr-auto"><a href="#"><span>Ver más</span><span>Ver más</span></a></div>
 				</div>
 			</div>
 		</div>
@@ -391,8 +372,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col text-center">
-					<div class="section_title">Our Departments</div>
-					<div class="section_subtitle">to choose from</div>
+					<div class="section_title">Nuestros Departamentos</div>
+					<div class="section_subtitle">Organización y Calidad de Servicio</div>
 				</div>
 			</div>
 			<div class="row dept_row">
@@ -407,8 +388,8 @@
 								<div class="owl-item dept_item">
 									<div class="dept_image"><img src="images/dept_1.jpg" alt=""></div>
 									<div class="dept_content">
-										<div class="dept_title">Neonatology</div>
-										<div class="dept_link"><a href="#">Read More</a></div>
+										<div class="dept_title">Pediatría</div>
+										<div class="dept_link"><a href="#">Ver más</a></div>
 									</div>
 								</div>
 
@@ -416,8 +397,8 @@
 								<div class="owl-item dept_item">
 									<div class="dept_image"><img src="images/dept_2.jpg" alt=""></div>
 									<div class="dept_content">
-										<div class="dept_title">Dentistry</div>
-										<div class="dept_link"><a href="#">Read More</a></div>
+										<div class="dept_title">Odontología</div>
+										<div class="dept_link"><a href="#">Ver más</a></div>
 									</div>
 								</div>
 
@@ -425,8 +406,8 @@
 								<div class="owl-item dept_item">
 									<div class="dept_image"><img src="images/dept_3.jpg" alt=""></div>
 									<div class="dept_content">
-										<div class="dept_title">Orthopedics</div>
-										<div class="dept_link"><a href="#">Read More</a></div>
+										<div class="dept_title">Ortopedia</div>
+										<div class="dept_link"><a href="#">Ver más</a></div>
 									</div>
 								</div>
 
@@ -434,8 +415,8 @@
 								<div class="owl-item dept_item">
 									<div class="dept_image"><img src="images/dept_4.jpg" alt=""></div>
 									<div class="dept_content">
-										<div class="dept_title">Laboratory</div>
-										<div class="dept_link"><a href="#">Read More</a></div>
+										<div class="dept_title">Oncología</div>
+										<div class="dept_link"><a href="#">Ver más</a></div>
 									</div>
 								</div>
 
@@ -453,111 +434,6 @@
 		</div>
 	</div>
 
-	<!-- FAQ & News -->
-
-	<div class="stuff">
-		<div class="container">
-			<div class="row">
-
-				<!-- FAQ -->
-				<div class="col-lg-7">
-					<div class="faq">
-						<div class="faq_title">Faq & Stuff</div>
-						<div class="faq_subtitle">read all about it</div>
-						<div class="elements_accordions">
-							<div class="accordions">
-
-								<div class="accordion_container">
-									<div class="accordion d-flex flex-row align-items-center active"><div>Maecenas fermentum tortor id fringilla molestie.</div></div>
-									<div class="accordion_panel">
-										<div>
-											<p>Lorem ipsum dolor sit amet, lorem maximus consectetur adipiscing elit. Donec malesuada lorem maximus mauris. Lorem ipsum dolor sit amet, lorem maximus consectetur adipiscing.</p>
-										</div>
-									</div>
-								</div>
-
-								<div class="accordion_container">
-									<div class="accordion d-flex flex-row align-items-center"><div>Duis quis lacinia elit. Etiam varius mi eget lacus ultricies elementum</div></div>
-									<div class="accordion_panel">
-										<div>
-											<p>Lorem ipsum dolor sit amet, lorem maximus consectetur adipiscing elit. Donec malesuada lorem maximus mauris. Lorem ipsum dolor sit amet, lorem maximus consectetur adipiscing.</p>
-										</div>
-									</div>
-								</div>
-
-								<div class="accordion_container">
-									<div class="accordion d-flex flex-row align-items-center"><div>Maecenas fermentum tortor id fringilla molestie.</div></div>
-									<div class="accordion_panel">
-										<div>
-											<p>Lorem ipsum dolor sit amet, lorem maximus consectetur adipiscing elit. Donec malesuada lorem maximus mauris. Lorem ipsum dolor sit amet, lorem maximus consectetur adipiscing.</p>
-										</div>
-									</div>
-								</div>
-
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Latest News -->
-				<div class="col-lg-5">
-					<div class="news">
-						<div class="news_title">Latest News</div>
-						<div class="news_subtitle">read all about it</div>
-						<div class="news_container">
-
-							<!-- Latest News Post -->
-							<div class="latest d-flex flex-row align-items-start justify-content-start">
-								<div><div class="latest_image"><img src="images/latest_1.jpg" alt=""></div></div>
-								<div class="latest_content">
-									<div class="latest_title"><a href="news.html">A simple blog post</a></div>
-									<div class="latest_info">
-										<ul class="d-flex flex-row align-items-start justify-content-start">
-											<li><a href="#">by Jane Smith</a></li>
-											<li><a href="#">April 25, 2018</a></li>
-										</ul>
-									</div>
-									<div class="latest_comments"><a href="#">2 Comments</a></div>
-								</div>
-							</div>
-
-							<!-- Latest News Post -->
-							<div class="latest d-flex flex-row align-items-start justify-content-start">
-								<div><div class="latest_image"><img src="images/latest_2.jpg" alt=""></div></div>
-								<div class="latest_content">
-									<div class="latest_title"><a href="news.html">A new way to see things in medicine</a></div>
-									<div class="latest_info">
-										<ul class="d-flex flex-row align-items-start justify-content-start">
-											<li><a href="#">by Jane Smith</a></li>
-											<li><a href="#">April 25, 2018</a></li>
-										</ul>
-									</div>
-									<div class="latest_comments"><a href="#">2 Comments</a></div>
-								</div>
-							</div>
-
-							<!-- Latest News Post -->
-							<div class="latest d-flex flex-row align-items-start justify-content-start">
-								<div><div class="latest_image"><img src="images/latest_3.jpg" alt=""></div></div>
-								<div class="latest_content">
-									<div class="latest_title"><a href="news.html">Why is Pharma industry so big?</a></div>
-									<div class="latest_info">
-										<ul class="d-flex flex-row align-items-start justify-content-start">
-											<li><a href="#">by Jane Smith</a></li>
-											<li><a href="#">April 25, 2018</a></li>
-										</ul>
-									</div>
-									<div class="latest_comments"><a href="#">2 Comments</a></div>
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
 </div>
 	<!-- Footer -->
 
@@ -616,6 +492,8 @@
 									<div class="col text-center">
 										<div class="section_title">Gobierno</div>
 										<div class="section_subtitle">En liena</div>
+										<br>
+										<div class="btnTransparencia"><a href="transparenciaAcceso.php">Transparencia y acceso a la información</a></div>
 									</div>
 								</div>
 								<div class="row dept_row">

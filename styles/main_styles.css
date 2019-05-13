@@ -1812,3 +1812,13 @@ section
 .inner-mega-menu a {
     text-decoration: none;
 }
+
+.btnTransparencia {
+	border-style: solid;
+	border-color: #32c69a;
+	border-radius: 16px; 
+}
+
+.btnTransparencia a {
+	color: #32c69a; 
+}
