@@ -91,7 +91,8 @@
 							<div class="col">
 								<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
 									<div class="logo">
-										<a href="#">ESE HOSPITAL SAN MARTIN DE PORRES</a>	
+										<img src="images/logoH.jpeg" width="20%">
+										<a href="#">SAN MARTíN DE PORRES</a>	
 									</div>
 									<div class="header_top_extra d-flex flex-row align-items-center justify-content-start ml-auto">
 										<div class="header_top_nav">
@@ -209,6 +210,9 @@
 						</div>
 						<div>
 							<?php echo $descripcionEntradaVista;?>
+						</div>
+						<div>
+						    <a href="<?php echo $urlDocumentoEntradaVista;?>">Descargar documento</a>	
 						</div>
 						</div>
 					</div>

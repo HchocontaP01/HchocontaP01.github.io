@@ -386,7 +386,7 @@ section
 .logo a span
 {
 	position: relative;
-	font-size: 36px;
+	font-size: 30px;
 	color: #32c69a;
 	line-height: 0.75;
 	vertical-align: text-top;
@@ -1690,8 +1690,8 @@ section
 
 .nav-bar {
     width: 100%;
-    background: #32c69a;
-    height: 70px;
+    background: #5dc7d4;
+    height: 63px;
     padding: 10px 0;
     box-sizing: 1px solid #1a252f;
 }
@@ -1724,11 +1724,11 @@ section
 }
 
 .nav-bar ul li:hover .mega-menu {
-    color: #fff;
+    color: black;
 }
 
-.nav-bar ul li .mega-menu p:hover {
-    color: #fff;
+.nav-bar ul li .mega-menu p:hover a:hover {
+    color: black;
     font-weight: bold;
 }
 
@@ -1744,14 +1744,16 @@ section
     left: 0;
     width: 100%;
     height: 500px;
-    background: #32c69a;
+    background: #fff;
     padding: 30px;
     transition: all 0.4s ease;
     box-sizing: border-box;
     display: none;
     scroll-behavior: smooth;
     overflow-y: scroll;
+    margin-top: 20px;
 }
+
 
 .inner-mega-menu {
     width: 17%;
@@ -1766,7 +1768,7 @@ section
 
 .inner-mega-menu p {
     transition: all 0.4s ease;
-    color: #fff;
+    color: black;
     font-size: 12px;
 }
 

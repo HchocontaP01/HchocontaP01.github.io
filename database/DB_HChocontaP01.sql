@@ -61,8 +61,10 @@ INSERT INTO tipoentrada VALUES (NULL,'Informes de PQRS','Conoce nuestros informe
 INSERT INTO tipoentrada VALUES (NULL,'Normatividad','Estas normas definen nuestro funcionamiento','images/normatividad.jpg');
 INSERT INTO tipoentrada VALUES (NULL,'Politicas y lineamientos','Mira nuestras politicas, lineamientos, manuales','images/politicasLineamientos.jpg');
 INSERT INTO tipoentrada VALUES (NULL,'Planes','Planeamos la ruta hacia nuestra eficacia','images/planes.jpg'); 
-INSERT INTO tipoentrada VALUES (NULL,'Programas','Así organizamos nuestras infancias','images/programas.jpg');
-INSERT INTO tipoentrada VALUES (NULL,'Calendario','Enteratè de nuestros proximos eventos','images/calendario.jpg');
+INSERT INTO tipoentrada VALUES (NULL,'Programas','Así enfocamos nuestra gestión.','images/programas.jpg');
+INSERT INTO tipoentrada VALUES (NULL,'Rendición de cuentas','Rendición de cuentas','images/rendicion.jpg');
+INSERT INTO tipoentrada VALUES (NULL,'Presupuesto','Así organizamos nuestras finanzas.','images/presupuesto.jpg');
+INSERT INTO tipoentrada VALUES (NULL,'Calendario de actividades','Enteratè de nuestros proximos eventos','images/calendario.jpg');
 INSERT INTO tipoentrada VALUES (NULL,'Niños, Niñas y Adolecentes','Nuestro futuro en acción','images/ninosNinas.jpg');
 INSERT INTO tipoentrada VALUES (NULL,'Retos de participación','Aporta tu punto de vista a nuestro desarrollo','images/retos.jpg'); 
 INSERT INTO tipoentrada VALUES (NULL,'Encuesta','Tu opiniòn es muy importante','images/encuesta.jpg'); 
@@ -70,6 +72,5 @@ INSERT INTO tipoentrada VALUES (NULL,'Instancias de participaciòn','Intégrate 
 INSERT INTO tipoentrada VALUES (NULL,'Transparencia y acceso','Transparencia y Acceso a la información publica','images/transparencia.jpg');
 INSERT INTO tipoentrada VALUES (NULL,'Trámites y Servicios ','Nuestros procedimientos estan para servirte','images/tramitesServicios.jpg');
 INSERT INTO tipoentrada VALUES (NULL,'Mecanismos de contacto','Así puedes contactarnos','images/mecanismos.jpg');
-INSERT INTO tipoentrada VALUES (NULL,'Transparencia','Facilitamos el acceso a nuestra iformación','images/transparencia.jpg');
 INSERT INTO tipoentrada VALUES (NULL,'Recepcion de solicitudes','Atendemos tus solicitudes ciudadanas','images/recepcionSolicitudes.jpg');
 INSERT INTO tipoentrada VALUES (NULL,'Política y protección de datos','Protegemos la información manejada','images/proteccionDatos.jpg');

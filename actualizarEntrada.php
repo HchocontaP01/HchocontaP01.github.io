@@ -110,7 +110,8 @@
 							<div class="col">
 								<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
 									<div class="logo">
-										<a href="#">ESE HOSPITAL SAN MARTIN DE PORRES</a>	
+										<img src="images/logoH.jpeg" width="20%">
+										<a href="#">SAN MARTíN DE PORRES</a>	
 									</div>
 									<div class="header_top_extra d-flex flex-row align-items-center justify-content-start ml-auto">
 										<div class="header_top_nav">
@@ -229,6 +230,8 @@
 								<input type="hidden" name="idEntrada" value="<?php echo $idEntradaVista?>"  >
 								<label>Titulo Entrada: </label>
 								<input type="text" id="contact_input" class="contact_input" placeholder="Titulo de entrada" required="required" name="tituloEntrada" value="<?php echo $tituloEntradaVista;  ?>">
+								<input type="hidden" name="idEntrada" value="<?php echo $urlImagenEntradaVista?>"  >
+								<input type="hidden" name="idEntrada" value="<?php echo $urlDocumentoEntradaVista?>"  >
 								<label>Descripción Entrada: </label>
 								<textarea class="contact_input contact_textarea" id="contact_textarea" placeholder="Descripción Entrada" required="required" name="descripcionEntrada" ><?php echo $descripcionEntradaVista; ?></textarea>
 								<br>
@@ -275,7 +278,7 @@
 								<button class="contact_button" id="contact_button">Enviar Entrada</button>
 								
 							</form>
-							<button class="contact_button" id="contact_button" onclick="location.href='listaEntrada.php'">Administrar Entradas</button>
+							<button class="contact_button btnAdminEntrdas" id="contact_button" onclick="location.href='listaEntrada.php'">Administrar Entradas</button>
 						</div>
 						</div>
 
@@ -286,12 +289,11 @@
 					<div class="info_form_container">
 						<div class="info_form_title">Archivos</div>
 						<form action="#" class="info_form" id="info_form">
-							<input type="text" class="info_input" placeholder="Url Imagen (jpg,jpge,png)">
-							<input type="file" class="info_form_button" name="upload">
+							<input type="text" class="info_input" placeholder="<?php echo"$urlImagenEntradaVista"; ?>">
 							<button type="file" class="info_form_button">Seleccionar Imagen</button>
 							<br>
 							<br>
-							<input type="text" class="info_input" placeholder="Url Documento (pdf,doc,docx,xls)" required="required">
+							<input type="text" class="info_input" placeholder="<?php echo"$urlDocumentoEntradaVista"?>" required="required">
 							<button class="info_form_button">Seleccionar Documento</button>
 							<br>
 							<br>

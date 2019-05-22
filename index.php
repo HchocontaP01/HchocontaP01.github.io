@@ -124,11 +124,16 @@
 						<div class="row">
 							<div class="col">
 								<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
+									<div>
+										<img src="images/logoH.png" style="padding-top: 20px;" >
+									</div>
 									<div class="logo">
-										<a href="#">ESE HOSPITAL SAN MARTIN DE PORRES</a>	
+										<a href="index.php"><span><br>  E.S.E HOSPITAL</span><br>  San Martín de Porres</a>
 									</div>
 									<div class="header_top_extra d-flex flex-row align-items-center justify-content-start ml-auto">
 										<div class="header_top_nav">
+											<br>
+											<br>
 											<ul class="d-flex flex-row align-items-center justify-content-start">
 												<li><a href="#">Correo interno</a></li>
 												<li><a href="#" id="show-login">Inicio de Sesión</a></li>
@@ -142,11 +147,12 @@
 						</div>
 					</div>
 				</div>
+			</div>
 				<div class="header_nav" id="header_nav_pin">	
 			        <nav class="nav-bar">
 			        	<span class="fi-monitor"></span>
 			            <ul>
-			                <li>Menu
+			                <li>Menú
 			                    <div class="mega-menu">
 			                        <div class="inner-mega-menu">
 			                        	<h4>NOSOTROS:</h4>
@@ -157,11 +163,11 @@
 			                            <p><i class="fa fa-address-card"></i><a href="consultaEntrada.php?idTipoEntrada=3"> | Directorio Funcionarios</a></p>
 			                            <p><i class="fa fa-address-book-o"></i><a href="consultaEntrada.php?idTipoEntrada=4"> | Directorio Institucional</a></p>
 			                            <p><i class="fa fa-history"></i><a href="consultaEntrada.php?idTipoEntrada=5"> | Procesos y procedimientos</a></p>
-			                            <p><i class="fa fa-envelope-open"></i><a href="consultaEntrada.php?idTipoEntrada=6"> | Correo Interno</a></p>
+			                            <p><i class="fa fa-envelope-open"></i><a href="#"> | Correo Interno</a></p>
 			                        </div>
 			                        <div class="inner-mega-menu">
 			                             <h4>Infórmate:</h4>
-					          			<p> <i class="fa fa-newspaper-o"> </i><a href="consultaEntrada.php?idTipoEntrada=7"> | Noticias</a></p>
+					          			<p> <i class="fa fa-newspaper-o"> </i><a href="consultaEntrada.php?idTipoEntrada=6"> | Noticias</a></p>
 							          <p> <i class="fa fa-database"> </i><a href="consultaEntrada.php?idTipoEntrada=7"> | Datos Abiertos</a></p>
 							          <p> <i class="fa fa-globe"> </i><a href="consultaEntrada.php?idTipoEntrada=8"> | Convocatorias</a></p>
 							          <p> <i class="fa fa-question-circle-o"> </i><a href="consultaEntrada.php?idTipoEntrada=9"> | Preguntas y respuestas</a></p>
@@ -172,37 +178,172 @@
 							          <p> <i class="fa fa-users"> </i><a href="consultaEntrada.php?idTipoEntrada=14"> | Población Vulnerable</a></p>
 							          <p> <i class="fa fa-language"> </i><a href="consultaEntrada.php?idTipoEntrada=15"> | Glosario</a></p>
 							          <p> <i class="fa fa-handshake-o"> </i><a href="consultaEntrada.php?idTipoEntrada=16"> | Contrataciones</a></p>
-							          <p> <i class="fa fa-flash"> </i><a href="consultaEntrada.php?idTipoEntrada=7"> | Ejecución de contratos</a></p>
+							          <p> <i class="fa fa-flash"> </i><a href="consultaEntrada.php?idTipoEntrada=17"> | Ejecución de contratos</a></p>
 			                        </div>
 			                        <div class="inner-mega-menu">
 			                           	<h4>Documentos:</h4>
-								          <p> <i class="fa fa-folder-open-o"> </i><a href="consultaEntrada.php?idTipoEntrada=16">  | Rendición de cuentas</a></p>
-								          <p> <i class="fa fa-file-text-o"> </i><a href="consultaEntrada.php?idTipoEntrada=17">  | Informes</a></p>
-								          <p> <i class="fa fa-bar-chart"> </i><a href="consultaEntrada.php?idTipoEntrada=18">  | Estudios e investigaciones</a></p>
-								          <p> <i class="fa fa-cogs"> </i><a href="consultaEntrada.php?idTipoEntrada=19">  | Proyectos en ejecución</a></p>
-								          <p> <i class="fa fa-file-archive-o"><a href="consultaEntrada.php?idTipoEntrada=20">  </i> | Informes de PQRS</a></i>
-								          <p> <i class="fa fa-list"> </i><a href="consultaEntrada.php?idTipoEntrada=21">  | Normatividad</a></p>
-								          <p> <i class="fa fa-clone"> </i><a href="consultaEntrada.php?idTipoEntrada=22">  | Políticas y lineamientos</a></p>
-								          <p> <i class="fa fa-cubes"> </i><a href="consultaEntrada.php?idTipoEntrada=23">  | Planes</a></p>
-								          <p> <i class="fa fa-desktop"> </i><a href="consultaEntrada.php?idTipoEntrada=24">  | Programas</a></p>
-								          <p> <i class="fa fa-money"> </i><a href="consultaEntrada.php?idTipoEntrada=25">  | Presupuesto</a></p>
+								          <p> <i class="fa fa-file-text-o"> </i><a href="consultaEntrada.php?idTipoEntrada=18">  | Informes</a></p>
+								          <p> <i class="fa fa-bar-chart"> </i><a href="consultaEntrada.php?idTipoEntrada=19">  | Estudios e investigaciones</a></p>
+								          <p> <i class="fa fa-cogs"> </i><a href="consultaEntrada.php?idTipoEntrada=20">  | Proyectos en ejecución</a></p>
+								          <p> <i class="fa fa-file-archive-o"></i><a href="consultaEntrada.php?idTipoEntrada=21"> | Informes de PQRS</a></p>
+								          <p> <i class="fa fa-list"> </i><a href="consultaEntrada.php?idTipoEntrada=22">  | Normatividad</a></p>
+								          <p> <i class="fa fa-clone"> </i><a href="consultaEntrada.php?idTipoEntrada=23">  | Políticas y lineamientos</a></p>
+								          <p> <i class="fa fa-cubes"> </i><a href="consultaEntrada.php?idTipoEntrada=24">  | Planes</a></p>
+								          <p> <i class="fa fa-desktop"> </i><a href="consultaEntrada.php?idTipoEntrada=25">  | Programas</a></p>
+								          <p> <i class="fa fa-folder-open-o"> </i><a href="consultaEntrada.php?idTipoEntrada=26">  | Rendición de cuentas</a></p>
+								           <p> <i class="fa fa-money"> </i><a href="consultaEntrada.php?idTipoEntrada=27">  | Presupuesto</a></p>
 			                        </div>
 			                        <div class="inner-mega-menu">
 			                            <h4>Participa:</h4>
-								          <p> <i class="fa fa-calendar"> </i><a href="consultaEntrada.php?idTipoEntrada=26">  | Calendario de Actividades</a></p>
-								          <p> <i class="fa fa-anchor"> </i><a href="consultaEntrada.php?idTipoEntrada=27">  | Retos de participacón</a></p>
-								          <p> <i class="fa fa-check-square-o"></i><a href="consultaEntrada.php?idTipoEntrada=28"> | Encuesta</a></P>
-								          <p> <i class="fa fa-bullhorn"> </i><a href="consultaEntrada.php?idTipoEntrada=29">  | Instancias de Participación</a></p>
+								          <p> <i class="fa fa-calendar"> </i><a href="consultaEntrada.php?idTipoEntrada=28">  | Calendario de Actividades</a></p>
+								          <p> <i class="fa fa-futbol-o"> </i><a href="consultaEntrada.php?idTipoEntrada=29">  | Niños, Niñas y Adolecentes</a></p>
+								          <p> <i class="fa fa-anchor"> </i><a href="consultaEntrada.php?idTipoEntrada=30">  | Retos de participacón</a></p>
+								          <p> <i class="fa fa-check-square-o"></i><a href="consultaEntrada.php?idTipoEntrada=31"> | Encuesta</a></p>
+								          <p> <i class="fa fa-bullhorn"> </i><a href="consultaEntrada.php?idTipoEntrada=32">  | Instancias de Participación</a></p>
 			                        </div> 
 			                        <div class="inner-mega-menu">
 			                        	<h4>Atención Ciudadana: </h4>
-								          <p> <i class="fa fa-floppy-o"> </i><a href="consultaEntrada.php?idTipoEntrada=30">  | Transparencia y acceso</a></p>
-								          <p> <i class="fa fa-files-o"> </i><a href="consultaEntrada.php?idTipoEntrada=31">  | Tramites y servicios</a></p>
-								          <p> <i class="fa fa-binoculars"> </i><a href="consultaEntrada.php?idTipoEntrada=32">  | Mecanismos de control</a></p>
-								          <p> <i class="fa fa-globe"> </i><a href="consultaEntrada.php?idTipoEntrada=33">  | Transparencia</a></p>
-								          <p> <i class="fa fa-cube"> </i><a href="consultaEntrada.php?idTipoEntrada=34">  | Recepción de solicitudes</a></p>
-								          <p> <i class="fa fa-user-secret"> </i><a href="consultaEntrada.php?idTipoEntrada=35">  | Política y protección de datos</a></p>
+								          <p> <i class="fa fa-floppy-o"> </i><a href="consultaEntrada.php?idTipoEntrada=33">  | Transparencia y acceso</a></p>
+								          <p> <i class="fa fa-files-o"> </i><a href="consultaEntrada.php?idTipoEntrada=34">  | Tramites y servicios</a></p>
+								          <p> <i class="fa fa-binoculars"> </i><a href="consultaEntrada.php?idTipoEntrada=35">  | Mecanismos de contacto</a></p>
+								          <p> <i class="fa fa-globe"> </i><a href="transparenciaAcceso.php">  | Transparencia</a></p>
+								          <p> <i class="fa fa-cube"> </i><a href="consultaEntrada.php?idTipoEntrada=36">  | Recepción de solicitudes</a></p>
+								          <p> <i class="fa fa-user-secret"> </i><a href="consultaEntrada.php?idTipoEntrada=37">  | Política y protección de datos</a></p>
 			                        </div>
+			                    </div>
+			                </li>
+			                <li>
+			                	Nosotros
+			                	<div class="mega-menu" style="height: 180px;">
+			                        <div class="inner-mega-menu">
+			                        	<h4>NOSOTROS:</h4>
+									</div>
+									<div class="inner-mega-menu">
+										<p> <i class="fa fa-home"> </i><a href="index.php"> | Inicio</a> </p>
+										<p> <i class="fa fa-building"> </i><a href="consultaEntrada.php?idTipoEntrada=1"> | Sedes</a></p>
+									</div>
+			                        <div class="inner-mega-menu">
+			                        	<p><i class="fa fa-hospital-o"> </i><a href="consultaEntrada.php?idTipoEntrada=2"> | Entidad</a></p>
+			                        	<p><i class="fa fa-address-card"></i><a href="consultaEntrada.php?idTipoEntrada=3"> | Directorio Funcionarios</a></p>
+			                        </div>
+			                         <div class="inner-mega-menu">
+			                        	<p><i class="fa fa-address-book-o"></i><a href="consultaEntrada.php?idTipoEntrada=4"> | Directorio Institucional</a></p>
+			                        	<p><i class="fa fa-history"></i><a href="consultaEntrada.php?idTipoEntrada=5"> | Procesos y procedimientos</a></p>
+			                        </div>
+			                        <div class="inner-mega-menu">
+			                        	<p><i class="fa fa-envelope-open"></i><a href="#"> | Correo Interno</a></p>
+			                        </div>   
+									   
+			                            
+			                     </div>
+			                </li>
+			                <li>
+			                	Infórmate
+			                	<div class="mega-menu" style="height: 250px;">
+			                        <div class="inner-mega-menu">
+			                        	<h4>Infórmate:</h4>
+									</div>
+									<div class="inner-mega-menu">
+										<p> <i class="fa fa-newspaper-o"> </i><a href="consultaEntrada.php?idTipoEntrada=6"> | Noticias</a></p>
+							          
+										<p> <i class="fa fa-database"> </i><a href="consultaEntrada.php?idTipoEntrada=7"> | Datos Abiertos</a></p>
+										<p> <i class="fa fa-users"> </i><a href="consultaEntrada.php?idTipoEntrada=14"> | Población Vulnerable</a></p>
+
+									</div>
+			                        <div class="inner-mega-menu">
+			                        	<p> <i class="fa fa-globe"> </i><a href="consultaEntrada.php?idTipoEntrada=8"> | Convocatorias</a></p>
+							         
+										<p> <i class="fa fa-question-circle-o"> </i><a href="consultaEntrada.php?idTipoEntrada=9"> | Preguntas y respuestas</a></p>
+										<p> <i class="fa fa-handshake-o"> </i><a href="consultaEntrada.php?idTipoEntrada=16"> | Contrataciones</a></p>
+			                        </div>
+			                         <div class="inner-mega-menu">
+			                        	<p> <i class="fa fa-flag-checkered"> </i><a href="consultaEntrada.php?idTipoEntrada=10"> | Metas, Objetivos e indicadores</a></p>
+							          
+										<p> <i class="fa fa-user-plus"> </i><a href="consultaEntrada.php?idTipoEntrada=11"> | Ofertas de empleo</a></p>
+										<p> <i class="fa fa-language"> </i><a href="consultaEntrada.php?idTipoEntrada=15"> | Glosario</a></p>
+			                        </div>
+			                        <div class="inner-mega-menu">
+			                        	<p> <i class="fa fa-gamepad"> </i><a href="consultaEntrada.php?idTipoEntrada=12"> | Control</a></p>
+																	          
+										<p> <i class="fa fa-info-circle"> </i><a href="consultaEntrada.php?idTipoEntrada=13"> | Información Adicional</a></p>
+										<p> <i class="fa fa-flash"> </i><a href="consultaEntrada.php?idTipoEntrada=17"> | Ejecución de contratos</a></p>
+			                        </div>   
+									   
+			                            
+			                     </div>
+			                </li>
+			                <li>
+			                	Documentos
+			                	<div class="mega-menu" style="height: 190px;">
+			                        <div class="inner-mega-menu">
+			                        	<h4>Documentos:</h4>
+									</div>
+									<div class="inner-mega-menu">
+										<p> <i class="fa fa-file-text-o"> </i><a href="consultaEntrada.php?idTipoEntrada=18">  | Informes</a></p>
+										<p> <i class="fa fa-list"> </i><a href="consultaEntrada.php?idTipoEntrada=22">  | Normatividad</a></p>
+										<p> <i class="fa fa-cubes"> </i><a href="consultaEntrada.php?idTipoEntrada=24">  | Planes</a></p>
+									</div>
+			                        <div class="inner-mega-menu">
+			                        	<p> <i class="fa fa-bar-chart"> </i><a href="consultaEntrada.php?idTipoEntrada=19">  | Estudios e investigaciones</a></p>
+			                        	<p> <i class="fa fa-clone"> </i><a href="consultaEntrada.php?idTipoEntrada=23">  | Políticas y lineamientos</a></p>
+
+			                        </div>
+			                         <div class="inner-mega-menu">
+			                        	<p> <i class="fa fa-cogs"> </i><a href="consultaEntrada.php?idTipoEntrada=20">  | Proyectos en ejecución</a></p>
+			                        	<p> <i class="fa fa-folder-open-o"> </i><a href="consultaEntrada.php?idTipoEntrada=26">  | Rendición de cuentas</a></p>
+			                        </div>
+			                        <div class="inner-mega-menu">
+			                        	<p> <i class="fa fa-desktop"> </i><a href="consultaEntrada.php?idTipoEntrada=25">  | Programas</a></p>
+			                        	<p> <i class="fa fa-money"> </i><a href="consultaEntrada.php?idTipoEntrada=27">  | Presupuesto</a></p>
+			                        	<p> <i class="fa fa-file-archive-o"></i><a href="consultaEntrada.php?idTipoEntrada=21"> | Informes de PQRS</a></p>
+			                        </div>   
+									   
+			                            
+			                     </div>
+			                </li>
+			                <li>
+			                	Participa
+			                	<div class="mega-menu" style="height: 190px;">
+			                        <div class="inner-mega-menu">
+			                        	<h4>Participa:</h4>
+									</div>
+									<div class="inner-mega-menu">
+										<p> <i class="fa fa-calendar"> </i><a href="consultaEntrada.php?idTipoEntrada=28">  | Calendario de Actividades</a></p>
+										<p> <i class="fa fa-futbol-o"> </i><a href="consultaEntrada.php?idTipoEntrada=29">  | Niños, Niñas y Adolecentes</a></p>
+									</div>
+			                        <div class="inner-mega-menu">
+			                        	 <p> <i class="fa fa-anchor"> </i><a href="consultaEntrada.php?idTipoEntrada=30">  | Retos de participacón</a></p>
+			                        </div>
+			                         <div class="inner-mega-menu">
+			                        	<p> <i class="fa fa-bullhorn"> </i><a href="consultaEntrada.php?idTipoEntrada=32">  | Instancias de Participación</a></p>
+			                        </div>
+			                        <div class="inner-mega-menu">
+			                        	 <p> <i class="fa fa-check-square-o"></i><a href="consultaEntrada.php?idTipoEntrada=31"> | Encuesta</a></p>
+			                        	 
+			                        </div>  
+			                    </div>
+			                </li>
+			                <li>
+			                	Atención
+			                	<div class="mega-menu" style="height: 180px;">
+			                        <div class="inner-mega-menu">
+			                        	<h4>Atención ciudadana:</h4>
+									</div>
+									<div class="inner-mega-menu">
+										<p> <i class="fa fa-floppy-o"> </i><a href="consultaEntrada.php?idTipoEntrada=33">  | Transparencia y acceso</a></p>
+										<p> <i class="fa fa-files-o"> </i><a href="consultaEntrada.php?idTipoEntrada=34">  | Tramites y servicios</a></p>
+									</div>
+			                        <div class="inner-mega-menu">
+			                        	<p> <i class="fa fa-binoculars"> </i><a href="consultaEntrada.php?idTipoEntrada=35">  | Mecanismos de contacto</a></p>
+			                        	<p> <i class="fa fa-globe"> </i><a href="transparenciaAcceso.php">  | Transparencia</a></p>
+			                        </div>
+			                         <div class="inner-mega-menu">
+			                         	<p> <i class="fa fa-user-secret"> </i><a href="consultaEntrada.php?idTipoEntrada=37">  | Política y protección de datos</a></p>
+			                        	
+			                        </div>
+			                        <div class="inner-mega-menu">
+			                        	<p> <i class="fa fa-cube"> </i><a href="consultaEntrada.php?idTipoEntrada=36">  | Recepción de solicitudes</a></p>
+			                        </div>  
 			                    </div>
 			                </li>
 			            </ul>

@@ -20,7 +20,7 @@
 	{
 		$idTipoEntrada = 2;
 	}
-	elseif ($tipoEntrada == "Directorio de funcionarios") 
+	elseif ($tipoEntrada == "Directorio de Funcionarios") 
 	{
 		$idTipoEntrada = 3;
 	}
