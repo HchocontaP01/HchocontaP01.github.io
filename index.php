@@ -1,3 +1,44 @@
+<?php
+		error_reporting(0);
+		require_once 'modelos/modeloEntrada.php';	
+		session_start();
+
+		$validacionSesion;
+		if ($_SESSION['user']==null || $_SESSION['user']=='') 
+		{
+			$validacionSesion = 1; 
+		}
+		else
+		{
+			$validacionSesion = 0; 
+		}
+
+		$idTipoEntrada = 6; 
+		$objConsultaEntrada = new modeloEntrada(null,null,null,null,null,null,null,$idTipoEntrada);
+		$aConsultaEntrada = $objConsultaEntrada->entradasXtipo(); 
+		$numeroFilas = count($aConsultaEntrada); 
+		if ($numeroFilas == 0) 
+		{
+			
+		}
+		else
+		{
+			foreach ($aConsultaEntrada as $valorEntrada) 
+			{
+				$idEntradaVista = $valorEntrada->idEntrada;
+				$fechaEntradaVista = $valorEntrada->fechaEntrada;
+				$tituloEntradaVista = $valorEntrada->tituloEntrada;
+				$descripcionEntradaVista = $valorEntrada->descripcionEntrada; 
+				$urlImagenEntradaVista = $valorEntrada->urlImagenEntrada; 
+				$urlDocumentoEntradaVista = $valorEntrada->urlDocumentoEntrada;
+				$estadoEntradaVista = $valorEntrada->estadoEntrada; 
+				$tipoEntradaVista = $valorEntrada->nombreTipoEntrada;
+				$descripcionTipoEntradaVista = $valorEntrada->descripcionTipoEntrada; 
+			}
+		}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -113,7 +154,7 @@
 	<!-- Home -->
 
 	<div class="home">
-		<div class="background_image" style="background-image:url(images/entidad.jpg)"></div>
+		<div class="background_image"></div>
 
 		<!-- Header -->
 
@@ -136,7 +177,20 @@
 											<br>
 											<ul class="d-flex flex-row align-items-center justify-content-start">
 												<li><a href="#">Correo interno</a></li>
-												<li><a href="#" id="show-login">Inicio de Sesión</a></li>
+												<?php
+													if ($validacionSesion == 1) 
+													{?>
+														<li><a href="#" id="show-login">Inicio de Sesión</a></li>														
+													<?php 
+													}
+													else
+													{?>
+														<li><a href="nuevaEntrada.php">Nueva Entrada</a></li>
+														<li><a href="controladores/controladorCerrarSesion.php">Cerrar Sesión</a></li>
+													<?php
+													}
+												?>
+												
 												<li><a href="#">Moodle</a></li>
 											</ul>
 										</div>
@@ -351,74 +405,63 @@
 				</div>
 		</header>
 
+	<!-- header carrusel -->
 		<div class="home_container">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="home_content">
-							<div class="home_title">"Su Salud y Calidad de Vida</div>
-							<div class="home_text">en nuestras manos"</div>
-						</div>
-					</div>
-				</div>
+			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+			  <div class="carousel-inner">
+			    <div class="carousel-item active">
+			      <img class="d-block w-100" src="images/homeCarrusel/1.jpg" alt="First slide">
+			    </div>
+			    <div class="carousel-item">
+			      <img class="d-block w-100" src="images/homeCarrusel/2.jpg" alt="Second slide">
+			    </div>
+			    <div class="carousel-item">
+			      <img class="d-block w-100" src="images/homeCarrusel/3.jpg" alt="Third slide">
+			    </div>
+			    <div class="carousel-item">
+			      <img class="d-block w-100" src="images/homeCarrusel/4.jpg" alt="Third slide">
+			    </div>
+			  </div>
+			  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+			    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			    <span class="sr-only">Previous</span>
+			  </a>
+			  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+			    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			    <span class="sr-only">Next</span>
+			  </a>
 			</div>
 		</div>
+	<!--  end header carrusel -->
+
 	</div>
 
 	<!-- Info Boxes -->
 
 	<div class="info">
-		<div class="container">
-			<div class="row row-eq-height">
+					<div class="container">
+						<div class="row row-eq-height">
 
-				<!-- Info Box -->
-				<div class="col-lg-4 info_box_col">
-					<div class="info_box">
-						<div class="info_image"><img src="images/info_1.jpg" alt=""></div>
-						<div class="info_content">
-							<div class="info_title">Free Consultations</div>
-							<div class="info_text">Arcu neque, scelerisque eget ligula ac, congue tempor felis. Integer tempor, eros a egestas finibus, dolor risus mollis.</div>
-							<div class="button info_button"><a href="#"><span>read more</span><span>read more</span></a></div>
+							<!-- Info Box -->
+							<?php foreach ($aConsultaEntrada as $entradas): ?>			
+							<div class="col-lg-4 info_box_col">
+								<div class="info_box">
+									
+									<div class="info_image" ><img src="<?php echo $urlImagenEntradaVista;?>" alt=""></div>
+									<div class="info_content">
+										<div class="info_title"><?php echo $entradas->tituloEntrada; ?></div>
+										<div class="info_text"><?php echo $entradas->descripcionEntrada; ?></div>
+										<div class="button info_button"><a href="detalleEntrada.php?idEntrada=<?php echo $entradas->idEntrada ?>"><span>Ver más</span><span>Ver más</span></a></div>
+									</div>
+								
+								</div>
+							</div>
+							<br>
+							<?php endforeach; ?>					
 						</div>
 					</div>
 				</div>
 
-				<!-- Info Box -->
-				<div class="col-lg-4 info_box_col">
-					<div class="info_box">
-						<div class="info_image"><img src="images/info_2.jpg" alt=""></div>
-						<div class="info_content">
-							<div class="info_title">Emergency Care</div>
-							<div class="info_text">Morbi arcu neque, scelerisque eget ligula ac, congue tempor felis. Integer tempor, eros a egestas finibus, dolor risus.</div>
-							<div class="button info_button"><a href="#"><span>read more</span><span>read more</span></a></div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Info Form -->
-				<div class="col-lg-4 info_box_col">
-					<div class="info_form_container">
-						<div class="info_form_title">Make an Appointment</div>
-						<form action="#" class="info_form" id="info_form">
-							<select name="info_form_dep" id="info_form_dep" class="info_form_dep info_input info_select">
-								<option>Department</option>
-								<option>Department</option>
-								<option>Department</option>
-							</select>
-							<select name="info_form_doc" id="info_form_doc" class="info_form_doc info_input info_select">
-								<option>Doctor</option>
-								<option>Doctor</option>
-								<option>Doctor</option>
-							</select>
-							<input type="text" class="info_input" placeholder="Name" required="required">
-							<input type="text" class="info_input" placeholder="Phone No">
-							<button class="info_form_button">make an appointment</button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<!-- Services -->
 
@@ -606,27 +649,10 @@
 							</div>
 						</div>
 					</div>
-					
-					<!-- Footer Contact -->
+
+										<!-- Footer Hours -->
+
 					<div class="col-lg-5 footer_col">
-						<div class="footer_contact">
-							<div class="footer_contact_title">Contactanos</div>
-							<div class="footer_contact_form_container">
-								<form action="#" class="footer_contact_form" id="footer_contact_form">
-									<div class="d-flex flex-xl-row flex-column align-items-center justify-content-between">
-										<input type="text" class="footer_contact_input" placeholder="Nombre" required="required">
-										<input type="email" class="footer_contact_input" placeholder="Correo electronico" required="required">
-									</div>
-									<textarea class="footer_contact_input footer_contact_textarea" placeholder="Mensaje" required="required"></textarea>
-									<button class="footer_contact_button">Enviar</button>
-								</form>
-							</div>
-						</div>
-					</div>
-
-					<!-- Footer Hours -->
-
-					<div class="col-lg-4 footer_col">
 						<div class="departments">
 							<div class="container">
 								<div class="row">
@@ -704,6 +730,25 @@
 						</div>
 
 				</div>
+					
+					<!-- Footer Contact -->
+					<div class="col-lg-4 footer_col">
+						<div class="footer_contact">
+							<div class="footer_contact_title">Contactanos</div>
+							<div class="footer_contact_form_container">
+								<form action="#" class="footer_contact_form" id="footer_contact_form">
+									<div class="d-flex flex-xl-row flex-column align-items-center justify-content-between">
+										<input type="text" class="footer_contact_input" placeholder="Nombre" required="required">
+										<input type="email" class="footer_contact_input" placeholder="Correo electronico" required="required">
+									</div>
+									<textarea class="footer_contact_input footer_contact_textarea" placeholder="Mensaje" required="required"></textarea>
+									<button class="footer_contact_button">Enviar</button>
+								</form>
+							</div>
+						</div>
+					</div>
+
+
 			</div>
 		</div>
 	</footer>

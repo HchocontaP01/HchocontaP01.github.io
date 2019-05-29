@@ -12,7 +12,9 @@
 	{	
 		$imgCargado = 0; 
 		$docCargado = 0; 
-		if (isset($_FILES['cargarImagen'])||isset($_FILES['cargarDocumento'])) 
+		$rutaI=NULL;
+		$rutaD=NULL; 
+		if (isset($_FILES['cargarImagen'])) 
 		{ 
 			$nombreTemporalImagen = $_FILES['cargarImagen']['tmp_name'];
 			$nombreImagen = $_FILES['cargarImagen']['name'];
@@ -243,8 +245,24 @@
 						<br>
 					<div class="contact_form_container">
 							<form action="controladores/controladorEntrada.php" id="contact_form" class="contact_form" method="POST">
-								<input type="hidden" name="rutaImg" value="<?php echo $rutaI ?>">
-								<input type="hidden" name="rutaDoc" value="<?php echo $rutaD ?>">
+								<?php
+								if ($imgCargado==1) {
+									?><input type="hidden" name="rutaImg" value="<?php echo $rutaI; ?>"><?php
+								}
+								else
+								{
+									?><input type="hidden" name="rutaImg" value="NULL"><?php	
+								}
+								?>
+								<?php
+								if ($docCargado==1) {
+									?><input type="hidden" name="rutaDoc" value="<?php echo $rutaD; ?>"><?php
+								}
+								else
+								{
+									?><input type="hidden" name="rutaDoc" value="NULL"><?php	
+								}
+								?>
 								<label>Titulo Entrada: </label>
 								<input type="text" id="contact_input" class="contact_input" placeholder="Titulo de entrada" required="required" name="tituloEntrada">
 								<label>Descripción Entrada: </label>
@@ -277,12 +295,23 @@
 									<option>Politicas y lineamientos</option>
 									<option>Planes</option>
 									<option>Programas</option>
-
+									<option>Rendición de cuentas</option>
+									<option>Presupuesto</option>
+									<option>Calendario de actividades</option>
+									<option>Niños, Niñas y Adolecentes</option>
+									<option>Retos de participación</option>
+									<option>Encuesta</option>
+									<option>Instancias de participaciòn</option>
+									<option>Transparencia y acceso</option>
+									<option>Trámites y Servicios</option>
+									<option>Mecanismos de contacto</option>
+									<option>Recepcion de solicitudes</option>
+									<option>Política y protección de datos</option>
 								</select>
 								<button class="contact_button" id="contact_button">Enviar Entrada</button>
 								
 							</form>
-							<button class="contact_button btnAdminEntrdas" id="contact_button" onclick="location.href='listaEntrada.php'">Administrar Entradas</button>
+							<a href="actualizarEntrada.php" class="contact_button btnAdminEntrdas" >Administrar Entradas</a>
 						</div>
 						</div>
 
@@ -296,7 +325,11 @@
 							<?php
 							if ($imgCargado == 1) 
 							{
-								?><input type="text" class="info_input" placeholder="Url Imagen (jpg,jpge,png)" value="<?php echo $rutaI?>"><?php
+								?>
+								<div style="width: 100%; height: 150px; text-align: center;">
+									<img src="<?php echo"$rutaI"; ?>" style="width: 100px;">
+								</div> 
+								<input type="text" class="info_input" placeholder="Url Imagen (jpg,jpge,png)" value="<?php echo $rutaI?>"><?php
 							}
 							else 
 							{

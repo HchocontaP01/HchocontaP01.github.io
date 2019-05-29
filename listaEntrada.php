@@ -1,7 +1,12 @@
 <?php
 	
+
 	session_start(); 
 	require_once 'modelos/modeloEntrada.php';
+	
+	$tituloEntradaC = $_GET["tituloEntrada"];
+	$tipoEntradaC = $_GET["tipoEntrada"];
+	$idTipoEntradaC = 0; 
 
 	if ($_SESSION['user']==null || $_SESSION['user']=='') 
 	{
@@ -9,9 +14,179 @@
 		header('location: index.php'); 
 	}
 	else
-	{
-		$todasEntradas = new modeloEntrada(NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
-		$consultaEntradas = $todasEntradas->listaEntradas(); 
+	{	
+
+		if (isset($tipoEntradaC) && $tipoEntradaC != "Seleccione") 
+		{
+			if ($tipoEntradaC == "Sedes") 
+			{
+				$idTipoEntradaC = 1; 
+			}
+			elseif ($tipoEntradaC == "Entidad") 
+			{
+				$idTipoEntradaC = 2;
+			}
+			elseif ($tipoEntradaC == "Directorio de Funcionarios") 
+			{
+				$idTipoEntradaC = 3;
+			}
+			elseif ($tipoEntradaC == "Directorio institucional") 
+			{
+				$idTipoEntradaC = 4;
+			}
+			elseif ($tipoEntradaC == "Procesos y procedimientos") 
+			{
+				$idTipoEntradaC = 5;
+			}
+			elseif ($tipoEntradaC == "Noticias") 
+			{
+				$idTipoEntradaC = 6;
+			}
+			elseif ($tipoEntradaC == "Datos abiertos") 
+			{
+				$idTipoEntradaC = 7;
+			}
+			elseif ($tipoEntradaC == "Convocatorias") 
+			{
+				$idTipoEntradaC = 8;
+			}
+			elseif ($tipoEntradaC == "Preguntas y respuestas") 
+			{
+				$idTipoEntradaC = 9;
+			}
+			elseif ($tipoEntradaC == "Metas, Objetivos e indicadores") 
+			{
+				$idTipoEntradaC = 10;
+			}
+			elseif ($tipoEntradaC == "Ofertas de empleo") 
+			{
+				$idTipoEntradaC = 11;
+			}
+			elseif ($tipoEntradaC == "Control") 
+			{
+				$idTipoEntradaC = 12;
+			}
+			elseif ($tipoEntradaC == "Información adicional") 
+			{
+				$idTipoEntradaC = 13;
+			}
+			elseif ($tipoEntradaC == "Población vulnerable") 
+			{
+				$idTipoEntradaC = 14;
+			}
+			elseif ($tipoEntradaC == "Glosario") 
+			{
+				$idTipoEntradaC = 15;
+			}
+			elseif ($tipoEntradaC == "Contrataciones") 
+			{
+				$idTipoEntradaC = 16;
+			}
+			elseif ($tipoEntradaC == "Ejecución de contratos") 
+			{
+				$idTipoEntradaC = 17;
+			}
+			elseif ($tipoEntradaC == "Informes") 
+			{
+				$idTipoEntradaC = 18;
+			}
+			elseif ($tipoEntradaC == "Estudios e investigaciones") 
+			{
+				$idTipoEntradaC = 19;
+			}
+			elseif ($tipoEntradaC == "Proyectos en ejecución") 
+			{
+				$idTipoEntradaC = 20;
+			}
+			elseif ($tipoEntradaC == "Informes de PQRS") 
+			{
+				$idTipoEntradaC =21;
+			}
+			elseif ($tipoEntradaC == "Normatividad") 
+			{
+				$idTipoEntradaC =22;
+			}
+			elseif ($tipoEntradaC == "Politicas y lineamientos") 
+			{
+				$idTipoEntradaC =23;
+			}
+			elseif ($tipoEntradaC == "Planes") 
+			{
+				$idTipoEntradaC =24;
+			}
+			elseif ($tipoEntradaC == "Programas") 
+			{
+				$idTipoEntradaC =25;
+			}
+			elseif ($tipoEntradaC == "Rendición de cuentas") 
+			{
+				$idTipoEntradaC =26;
+			}
+			elseif ($tipoEntradaC == "Presupuesto") 
+			{
+				$idTipoEntradaC =27;
+			}
+			elseif ($tipoEntradaC == "Calendario")
+			{
+				$idTipoEntradaC =28;
+			}
+			elseif ($tipoEntradaC == "Niños, Niñas y Adolecentes")
+			{
+				$idTipoEntradaC =29;
+			}
+			elseif ($tipoEntradaC == "Retos de participación")
+			{
+				$idTipoEntradaC =30;
+			}
+			elseif ($tipoEntradaC == "Encuesta")
+			{
+				$idTipoEntradaC =31;
+			}
+			elseif ($tipoEntradaC == "Instancias de participación")
+			{
+				$idTipoEntradaC =32;
+			}
+			elseif ($tipoEntradaC == "Transparencia y acceso")
+			{
+				$idTipoEntradaC =33;
+			}
+			elseif ($tipoEntradaC == "Trámites y Servicios")
+			{
+				$idTipoEntradaC =34;
+			}
+			elseif ($tipoEntradaC == "Mecanismos de contacto")
+			{
+				$idTipoEntradaC =35;
+			}
+			elseif ($tipoEntradaC == "Recepcion de solicitudes")
+			{
+				$idTipoEntradaC =36;
+			}
+			elseif ($tipoEntradaC == "Política y protección de datos")
+			{
+				$idTipoEntradaC =37;
+			}
+
+			$todasEntradas = new modeloEntrada(NULL,NULL,NULL,NULL,NULL,NULL,NULL,$idTipoEntradaC);
+			$consultaEntradas = $todasEntradas->entradasXtipo();
+			
+
+		}
+		else if (isset($tituloEntradaC))
+		{		
+			$todasEntradas = new modeloEntrada(NULL,NULL,$tituloEntradaC,NULL,NULL,NULL,NULL,NULL);
+			$consultaEntradas = $todasEntradas->entradasXtitulo(); 	 
+			
+		}
+
+		else
+		{
+			
+			$todasEntradas = new modeloEntrada(NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+			$consultaEntradas = $todasEntradas->listaEntradas();
+		}
+			
+		
 	}
 
 	
@@ -206,19 +381,16 @@
 					<div class="col-lg-8 contact_col">
 					<div class="contact_form">
 						<div class="contact_title">
-							<spam>Seleccione uno o varios parametros</spam>
+							<spam>Parametros de consulta</spam>
 						</div>
 						<br>
-						<form>
-						<div class="row" style="float: right;">
+						<form action="listaEntrada.php" method="GET">
 							<h4>Titulo Entrada  </h4>
-							<input type="text" id="contact_input" class="contact_input" placeholder="Titulo de entrada" name="tituloEntrada">
-							<h4>   Fecha Entrada  </h4>
-							<input type="text" id="contact_input" class="contact_input" placeholder="Fecha de entrada" name="fechaEntrada">
+							<input type="text" id="contact_input" class="contact_input" placeholder="Titulo de entrada" name="tituloEntrada">	
 							
 							<h4>   Tipo Entrada  </h4>
 			
-							<select name="tipoEntrada" id="contact_input" class="contact_input" placeholder="Seleccione una opción" >
+							<select name="tipoEntrada" id="contact_input" class="contact_input notItemOne" placeholder="Seleccione una opción">	
 									<option>Seleccione</option>
 									<option>Sedes</option>
 									<option>Entidad</option>
@@ -244,17 +416,29 @@
 									<option>Politicas y lineamientos</option>
 									<option>Planes</option>
 									<option>Programas</option>
-							</select>	
-						</div>
-						<div>
-							<button class="contact_button" id="contact_button">Consultar</button>
-							<button class="contact_button" id="contact_button">Nueva entrada</button>
-						</div>
-						
+									<option>Rendición de cuentas</option>
+									<option>Presupuesto</option>
+									<option>Calendario de actividades</option>
+									<option>Niños, Niñas y Adolecentes</option>
+									<option>Retos de participación</option>
+									<option>Encuesta</option>
+									<option>Instancias de participaciòn</option>
+									<option>Transparencia y acceso</option>
+									<option>Trámites y Servicios</option>
+									<option>Mecanismos de contacto</option>
+									<option>Recepcion de solicitudes</option>
+									<option>Política y protección de datos</option>
+
+								</select>
+
+								<button class="contact_button" id="contact_button">Consultar</button>
+								<a href="nuevaEntrada.php" class="contact_button btnAdminEntrdas">Nueva Entrada</a>
 						</form>
+
 						<br>
 				
 					</div>
+
 				</div>
 
 				<!-- Consulta de sedes  -->
@@ -276,7 +460,7 @@
 				      <th scope="row"><?php echo $entradas->idEntrada ?></th>
 				      <td><?php echo $entradas->tituloEntrada ?></td>
 				      <td><?php echo $entradas->descripcionEntrada ?></td>
-				      <td><?php echo $entradas->idTipoEntrada ?></td>
+				      <td><?php echo $entradas->nombreTipoEntrada ?></td>
 				      <td>
 				      	<button class="contact_button_list" id="contact_button"  onclick="location.href='actualizarEntrada.php?idEntrada=<?php echo $entradas->idEntrada ?>'">Actualizar</button>
 				      	<button class="contact_button_list" styles" style="background: #404040" id="contact_button" onclick="location.href='controladores/controladorEstadoEntrada.php?idEntrada=<?php echo $entradas->idEntrada ?>'">Desactivar</button>

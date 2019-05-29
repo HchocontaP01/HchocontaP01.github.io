@@ -23,7 +23,7 @@ CREATE TABLE entradas
 (
     idEntrada INT AUTO_INCREMENT,
     fechaEntrada DATE NOT NULL, 
-    tituloEntrada VARCHAR(50) NOT NULL,
+    tituloEntrada VARCHAR(100) NOT NULL,
     descripcionEntrada VARCHAR(500) NOT NULL, 
     urlImagenEntrada VARCHAR(100) NULL,
     urlDocumentoEntrada VARCHAR(100) NULL,

@@ -63,7 +63,9 @@
 
 			try 
 			{
-				$sql = $pdo->prepare("SELECT * FROM entradas WHERE estadoEntrada = 'Activo' ORDER BY fechaEntrada DESC"); 
+				$sql = $pdo->prepare("SELECT entradas.idEntrada, entradas.fechaEntrada, entradas.tituloEntrada, entradas.descripcionEntrada, entradas.urlImagenEntrada, entradas.urlDocumentoEntrada, entradas.estadoEntrada, entradas.estadoEntrada, tipoentrada.nombreTipoEntrada, tipoentrada.descripcionTipoEntrada, tipoentrada.urlImagTipoEntrada FROM entradas INNER JOIN tipoentrada
+					 ON entradas.idTipoEntrada = tipoentrada.idTipoEntrada 
+					 WHERE  entradas.estadoEntrada = 'Activo' ORDER BY entradas.fechaEntrada"); 
 
 				$sql->execute();
 				return $sql->fetchAll(PDO::FETCH_OBJ);
@@ -89,8 +91,8 @@
 				$sql->bindParam(":fechaEntrada",$this->fechaEntrada);
 				$sql->bindParam(":tituloEntrada",$this->tituloEntrada);
 				$sql->bindParam(":descripcionEntrada",$this->descripcionEntrada);
-				$sql->bindParam(":urlImagenEntrada",$this->urlImagenEntrada);
-				$sql->bindParam(":urlDocumentoEntrada",$this->urlDocumentoEntrada);
+				$sql->bindParam(":urlImagenEntrada",$this->urlImagen);
+				$sql->bindParam(":urlDocumentoEntrada",$this->urlDocumento);
 				$sql->bindParam(":estadoEntrada",$this->estadoEntrada); 
 				$sql->bindParam(":idTipoEntrada",$this->idTipoEntrada); 
 
@@ -141,7 +143,10 @@
 
 			try 
 			{
-				$sql = $pdo->prepare("SELECT * FROM entradas WHERE tituloEntrada = %:tituloEntrada%"); 
+				$sql = $pdo->prepare("SELECT entradas.idEntrada, entradas.fechaEntrada, entradas.tituloEntrada, entradas.descripcionEntrada, entradas.urlImagenEntrada, entradas.urlDocumentoEntrada, entradas.estadoEntrada, entradas.estadoEntrada, tipoentrada.nombreTipoEntrada FROM entradas 
+					INNER JOIN tipoentrada
+					ON entradas.idTipoEntrada = tipoentrada.idTipoEntrada 
+					WHERE entradas.tituloEntrada LIKE CONCAT(:tituloEntrada, '%') AND entradas.estadoEntrada = 'Activo' ORDER BY entradas.fechaEntrada"); 
 				$sql->bindParam(":tituloEntrada",$this->tituloEntrada);
 				$sql->execute();
 				return $sql->fetchAll(PDO::FETCH_OBJ);
@@ -183,7 +188,7 @@
 			{
 				$sql = $pdo->prepare("SELECT entradas.idEntrada, entradas.fechaEntrada, entradas.tituloEntrada, entradas.descripcionEntrada, entradas.urlImagenEntrada, entradas.urlDocumentoEntrada, entradas.estadoEntrada, entradas.estadoEntrada, tipoentrada.nombreTipoEntrada, tipoentrada.descripcionTipoEntrada, tipoentrada.urlImagTipoEntrada FROM entradas INNER JOIN tipoentrada
 					 ON entradas.idTipoEntrada = tipoentrada.idTipoEntrada 
-					 WHERE entradas.idTipoEntrada = :tipoEntrada AND entradas.estadoEntrada = 'Activo'" ); 
+					 WHERE entradas.idTipoEntrada = :tipoEntrada AND entradas.estadoEntrada = 'Activo' ORDER BY entradas.fechaEntrada" ); 
 				$sql->bindParam(":tipoEntrada",$this->idTipoEntrada);
 
 				$sql->execute();

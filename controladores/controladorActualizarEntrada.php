@@ -6,8 +6,8 @@
 	$fechaEntrada = date("Y/m/d"); 
 	$tituloEntrada = $_POST["tituloEntrada"];
 	$descripcionEntrada = $_POST["descripcionEntrada"];
-	$urlImagen = NULL; 
-	$urlDoc = NULL; 
+	$urlImagen = $_POST["imgRutaEntrada"]; 
+	$urlDoc = $_POST["docRutaEntrada"]; 
 	$estadoEntrada = $_POST["estadoEntrada"];
 	$tipoEntrada = $_POST["tipoEntrada"];
 	$idTipoEntrada = 0; 
@@ -112,9 +112,57 @@
 	{
 		$idTipoEntrada =25;
 	}
+	elseif ($tipoEntrada == "Rendición de cuentas") 
+	{
+		$idTipoEntrada =26;
+	}
+	elseif ($tipoEntrada == "Presupuesto") 
+	{
+		$idTipoEntrada =27;
+	}
+	elseif ($tipoEntrada == "Calendario")
+	{
+		$idTipoEntrada =28;
+	}
+	elseif ($tipoEntrada == "Niños, Niñas y Adolecentes")
+	{
+		$idTipoEntrada =29;
+	}
+	elseif ($tipoEntrada == "Retos de participación")
+	{
+		$idTipoEntrada =30;
+	}
+	elseif ($tipoEntrada == "Encuesta")
+	{
+		$idTipoEntrada =31;
+	}
+	elseif ($tipoEntrada == "Instancias de participación")
+	{
+		$idTipoEntrada =32;
+	}
+	elseif ($tipoEntrada == "Transparencia y acceso")
+	{
+		$idTipoEntrada =33;
+	}
+	elseif ($tipoEntrada == "Trámites y Servicios")
+	{
+		$idTipoEntrada =34;
+	}
+	elseif ($tipoEntrada == "Mecanismos de contacto")
+	{
+		$idTipoEntrada =35;
+	}
+	elseif ($tipoEntrada == "Recepcion de solicitudes")
+	{
+		$idTipoEntrada =36;
+	}
+	elseif ($tipoEntrada == "Política y protección de datos")
+	{
+		$idTipoEntrada =37;
+	}
 
 	$nuevaEntrada = new modeloEntrada($idEntrada,$fechaEntrada,$tituloEntrada,$descripcionEntrada,$urlImagen,$urlDoc,$estadoEntrada,$idTipoEntrada);
 
 	$nuevaEntrada->actualizarEntrada();
-	header('location: ../nuevaEntrada.php'); 
+	header('location: ../listaEntrada.php'); 
 ?>

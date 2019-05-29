@@ -10,9 +10,57 @@
 	}
 	else
 	{
+
+			$imgCargado = 0; 
+			$docCargado = 0; 
+			if (isset($_FILES['cargarImagen'])) 
+			{ 
+				$nombreTemporalImagen = $_FILES['cargarImagen']['tmp_name'];
+				$nombreImagen = $_FILES['cargarImagen']['name'];
+				$tipoImagen = $_FILES['cargarImagen']['type'];
+				$fileNameCmps = explode(".", $nombreImagen);
+				$extensionImagen = strtolower(end($fileNameCmps));
+				$rutaI = 'files/'.$nombreImagen; 
+				$extPermitidoI = array('jpg', 'png');
+				if (in_array($extensionImagen, $extPermitidoI)) 
+				{
+					if (move_uploaded_file($nombreTemporalImagen, $rutaI)) 
+					{
+						$imgCargado = 1; 
+					}
+					else
+					{
+						$imgCargado = 0;  
+					}
+				}
+			}
+
+			if (isset($_FILES['cargarDocumento'])) 
+			{
+				$nombreTemporalDocumento = $_FILES['cargarDocumento']['tmp_name'];
+				$nombreDocumento = $_FILES['cargarDocumento']['name'];
+				$tipoDocumento = $_FILES['cargarDocumento']['type'];
+				$fileNameCmps = explode(".", $nombreDocumento);
+				$extensionDocumento = strtolower(end($fileNameCmps));
+				$rutaD = 'files/'.$nombreDocumento;  
+				$extPermitidoD = array('doc', 'docx', 'pdf','xls','xlsx');
+				if (in_array($extensionDocumento, $extPermitidoD)) 
+				{
+					if (move_uploaded_file($nombreTemporalDocumento, $rutaD)) 
+					{
+						$docCargado = 1; 
+					}
+					else
+					{
+						$docCargado = 0;  
+					}
+
+				}
+			}
+
 		if (empty($_GET['idEntrada'])) 
 		{
-				header('location: listaEntrada.php'); 
+			header('location: listaEntrada.php'); 
 		}	
 		else
 		{
@@ -229,9 +277,31 @@
 							<form action="controladores/controladorActualizarEntrada.php" id="contact_form" class="contact_form" method="POST">
 								<input type="hidden" name="idEntrada" value="<?php echo $idEntradaVista?>"  >
 								<label>Titulo Entrada: </label>
-								<input type="text" id="contact_input" class="contact_input" placeholder="Titulo de entrada" required="required" name="tituloEntrada" value="<?php echo $tituloEntradaVista;  ?>">
-								<input type="hidden" name="idEntrada" value="<?php echo $urlImagenEntradaVista?>"  >
-								<input type="hidden" name="idEntrada" value="<?php echo $urlDocumentoEntradaVista?>"  >
+								<input type="text" id="contact_input" class="contact_input" placeholder="Titulo de entrada" required="required" name="tituloEntrada" value="<?php echo $tituloEntradaVista;?>">
+								<?php
+								if ($imgCargado == 1) 
+								{?>	
+									<input type="hidden" name="imgRutaEntrada" value="<?php echo $rutaI?>">
+									<?php	
+								}
+								else if ($imgCargado==0)
+								{?>
+									<input type="hidden" name="imgRutaEntrada" value="<?php echo $urlImagenEntradaVista?>">
+									<?php	
+								}
+								
+								
+								if ($docCargado == 1) 
+								{?>	
+									<input type="hidden" name="docRutaEntrada" value="<?php echo $rutaD?>">
+									<?php	
+								}
+								else if ($docCargado == 0)
+								{?>
+									<input type="hidden" name="docRutaEntrada" value="<?php echo $urlDocumentoEntradaVista;?>">
+									<?php	
+								}?>
+								
 								<label>Descripción Entrada: </label>
 								<textarea class="contact_input contact_textarea" id="contact_textarea" placeholder="Descripción Entrada" required="required" name="descripcionEntrada" ><?php echo $descripcionEntradaVista; ?></textarea>
 								<br>
@@ -263,6 +333,18 @@
 									<option>Politicas y lineamientos</option>
 									<option>Planes</option>
 									<option>Programas</option>
+									<option>Rendición de cuentas</option>
+									<option>Presupuesto</option>
+									<option>Calendario de actividades</option>
+									<option>Niños, Niñas y Adolecentes</option>
+									<option>Retos de participación</option>
+									<option>Encuesta</option>
+									<option>Instancias de participaciòn</option>
+									<option>Transparencia y acceso</option>
+									<option>Trámites y Servicios</option>
+									<option>Mecanismos de contacto</option>
+									<option>Recepcion de solicitudes</option>
+									<option>Política y protección de datos</option>
 
 								</select>
 								<br>
@@ -288,19 +370,48 @@
 				<div class="col-lg-4 contact_col">
 					<div class="info_form_container">
 						<div class="info_form_title">Archivos</div>
-						<form action="#" class="info_form" id="info_form">
-							<input type="text" class="info_input" placeholder="<?php echo"$urlImagenEntradaVista"; ?>">
-							<button type="file" class="info_form_button">Seleccionar Imagen</button>
+						<form action="actualizarEntrada.php?idEntrada=<?php echo $idEntradaVista?>" method="POST" class="info_form" id="info_form" enctype="multipart/form-data">
+							<?php
+							if ($imgCargado == 1) 
+							{
+								?>
+								<div style="width: 100%; height: 150px; text-align: center;">
+									<img src="<?php echo"$rutaI"; ?>" style="width: 100px;">
+								</div> 
+								<input type="text" class="info_input" placeholder="Url Imagen (jpg,jpge,png)" value="<?php echo $rutaI?>"><?php
+							}
+							else 
+							{
+								?>
+								<div style="width: 100%; height: 150px; text-align: center;">
+									<img src="<?php echo"$urlImagenEntradaVista"; ?>" style="width: 100px;">
+								</div> 
+								<input type="text" class="info_input" placeholder="Url Imagen (jpg,jpge,png)" value="<?php echo $urlImagenEntradaVista?>">
+								<?php
+							}
+							?>
+									
+							<label class="info_form_button labelCargar">Seleccionar Imagen <input type="file" id="cargar" name="cargarImagen"></label> 
 							<br>
 							<br>
-							<input type="text" class="info_input" placeholder="<?php echo"$urlDocumentoEntradaVista"?>" required="required">
-							<button class="info_form_button">Seleccionar Documento</button>
+							<?php
+							if ($docCargado == 1) 
+							{
+								?><input type="text" class="info_input" placeholder="Url Documento (pdf,doc,docx,xls)" value="<?php echo $rutaD?>"><?php
+							}
+							else 
+							{
+								?>
+								<input type="text" class="info_input" placeholder="Url Documento (pdf,doc,xls)" value="<?php echo$urlDocumentoEntradaVista?>"><?php
+							}
+							?>
+							<label class="info_form_button labelCargar">Seleccionar Documento<input type="file" id="cargar" name="cargarDocumento"></label> 
 							<br>
 							<br>
 							<br>
 							<br>
 							<br>
-							<button class="info_form_button">Enviar Archivos</button>
+							<button class="info_form_button">Cargar Archivos</button>
 						</form>
 					</div>
 				</div>
